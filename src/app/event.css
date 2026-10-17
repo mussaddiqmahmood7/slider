@@ -494,3 +494,325 @@
     gap: 12px;
   }
 }
+.slide.foundations-slide h1,
+.slide.abstraction-slide h1,
+.slide.security-slide h1 {
+  font-size: 4.9cqw;
+}
+.foundation-map {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 5cqw;
+  flex: 1;
+}
+.foundation-list {
+  margin: 0;
+}
+.foundation-list > div {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5cqw;
+  padding: 1cqw 0;
+  border-bottom: 1px solid var(--border);
+}
+.foundation-list dt {
+  font-size: 1.7cqw;
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+.foundation-list dd {
+  font-size: 1.35cqw;
+  color: var(--muted);
+  margin: 0;
+  align-self: center;
+}
+.stack-column {
+  border-left: 1px solid var(--accent);
+  padding-left: 3cqw;
+  position: relative;
+}
+.stack-column small {
+  font-size: 0.9cqw;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.stack-column h2 {
+  font-size: 3.1cqw;
+  margin: 2cqw 0 1.2cqw;
+}
+.stack-column h2 span {
+  font-size: 2cqw;
+  color: var(--accent);
+}
+.stack-rule {
+  width: 4cqw;
+  border-top: 1px solid var(--border);
+}
+.stack-column p {
+  font-size: 1.4cqw;
+  color: var(--muted);
+}
+.stack-bracket {
+  position: absolute;
+  right: 1cqw;
+  bottom: 2cqw;
+  font-size: 5cqw;
+  color: var(--accent);
+}
+.abstraction-visual {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4cqw;
+  flex: 1;
+  align-items: center;
+}
+.abstraction-stairs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 21cqw;
+  position: relative;
+}
+.abstraction-stairs li {
+  width: 10cqw;
+  position: absolute;
+  left: calc(var(--step) * 9cqw);
+  bottom: calc(var(--step) * 3.3cqw);
+  border-bottom: 3px solid var(--accent);
+  min-height: 4.8cqw;
+  padding: 0.8cqw;
+  background: var(--accent-soft);
+}
+.abstraction-stairs li span {
+  font-size: 0.8cqw;
+  color: var(--muted);
+  display: block;
+}
+.abstraction-stairs li strong {
+  display: block;
+  font-size: 1.4cqw;
+  font-weight: 550;
+  line-height: 1.2;
+  margin-top: 0.5cqw;
+}
+.slide .ownership-question {
+  font-size: 1.3cqw;
+  color: var(--muted);
+  justify-self: end;
+  line-height: 1.7;
+}
+.ownership-question strong {
+  display: block;
+  color: var(--text);
+  font-size: 2.4cqw;
+  font-weight: 550;
+  line-height: 1.45;
+  margin-top: 0.8cqw;
+}
+.perspective-note {
+  color: var(--muted);
+  font-size: 1.05cqw;
+  margin: 1.1cqw 0;
+  max-width: 90%;
+}
+.security-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 4cqw;
+}
+.code-heading {
+  font-size: 0.85cqw;
+  display: flex;
+  gap: 1cqw;
+  justify-content: space-between;
+  color: var(--muted);
+  padding: 0.8cqw 1cqw;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+}
+.code-comparison pre {
+  margin: 0 0 1cqw;
+  background: var(--code);
+  border: 1px solid var(--border);
+  padding: 1cqw;
+  font-size: 1.4cqw;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+.code-comparison pre span,
+.code-comparison mark {
+  display: block;
+}
+.code-comparison mark {
+  margin: 0.5cqw -0.2cqw;
+  padding: 0.4cqw 0.2cqw;
+  border-left: 3px solid var(--warning);
+  color: var(--warning);
+  background: var(--stage);
+  white-space: pre-wrap;
+}
+.code-comparison .guard-present {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.slide .code-lesson {
+  font-size: 1.15cqw;
+  color: var(--muted);
+  margin: 1cqw 0 0;
+}
+.benchmark-stat {
+  border-left: 1px solid var(--border);
+  padding-left: 3cqw;
+}
+.benchmark-stat > span {
+  font-size: 0.85cqw;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.benchmark-stat > strong {
+  display: block;
+  font-size: 8cqw;
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.07em;
+  color: var(--warning);
+}
+.benchmark-stat > strong small {
+  font-size: 3.5cqw;
+}
+.benchmark-stat p {
+  font-size: 1.7cqw;
+  margin: 0.2cqw 0 1cqw;
+}
+.benchmark-stat > small {
+  font-size: 1.05cqw;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.slide .review-loop {
+  font-size: 1.4cqw;
+  margin-top: 1.3cqw;
+  display: flex;
+  justify-content: space-between;
+  max-width: 65%;
+}
+.review-loop span {
+  color: var(--accent);
+}
+@media (max-width: 700px), (max-height: 520px) {
+  .slide.foundations-slide h1,
+  .slide.abstraction-slide h1,
+  .slide.security-slide h1 {
+    font-size: 9cqw;
+  }
+  .foundation-map,
+  .abstraction-visual,
+  .security-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .foundation-list > div {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 14px 0;
+  }
+  .foundation-list dt {
+    font-size: 21px;
+  }
+  .foundation-list dd {
+    font-size: 17px;
+  }
+  .stack-column {
+    padding: 12px 20px;
+  }
+  .stack-column small {
+    font-size: 11px;
+  }
+  .stack-column h2 {
+    font-size: 30px;
+    margin: 18px 0;
+  }
+  .stack-column h2 span {
+    font-size: 24px;
+  }
+  .stack-column p {
+    font-size: 18px;
+  }
+  .stack-bracket {
+    font-size: 60px;
+  }
+  .abstraction-stairs {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .abstraction-stairs li {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: 14px;
+  }
+  .abstraction-stairs li span {
+    font-size: 11px;
+  }
+  .abstraction-stairs li strong {
+    font-size: 21px;
+  }
+  .slide .ownership-question {
+    justify-self: start;
+    font-size: 16px;
+  }
+  .ownership-question strong {
+    font-size: 26px;
+  }
+  .perspective-note {
+    font-size: 13px;
+    margin: 16px 0;
+  }
+  .code-heading {
+    font-size: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  .code-comparison pre {
+    font-size: 13px;
+    padding: 14px;
+    line-height: 1.8;
+  }
+  .code-comparison mark {
+    padding: 8px 4px;
+    margin: 12px -4px;
+  }
+  .slide .code-lesson {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+  .benchmark-stat {
+    padding: 18px 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .benchmark-stat > span {
+    font-size: 11px;
+  }
+  .benchmark-stat > strong {
+    font-size: 90px;
+  }
+  .benchmark-stat > strong small {
+    font-size: 40px;
+  }
+  .benchmark-stat p {
+    font-size: 23px;
+  }
+  .benchmark-stat > small {
+    font-size: 14px;
+  }
+  .slide .review-loop {
+    font-size: 14px;
+    max-width: 100%;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+}
