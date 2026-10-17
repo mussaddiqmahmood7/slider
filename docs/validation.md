@@ -1,6 +1,6 @@
 # Validation record
 
-17 October 2026, Node 24.22.0 / npm 11.19.1. This file records performed checks, not certification of arbitrary author slides.
+17 October 2026, Node 24.22.0 / npm 11.19.1. This file records performed checks, not certification of arbitrary author slides. Records are chronological; the final section is the current result. Earlier content, evidence and layout descriptions may have been superseded.
 
 - Strict TypeScript, ESLint, Prettier and static export passed.
 - Chromium suite covers history/hash recovery, malformed hashes, boundaries, rapid navigation, interactive keyboard handling, theme/state persistence, overview focus/selection/return, reduced motion, fullscreen and no external core requests.
@@ -43,7 +43,7 @@ Final local checks:
 
 Limits: no physical projector, real screen-reader session, Safari/Firefox run, repository-subpath deployment or whole-deck printing was tested. The main-source Urdu example does not certify arbitrary RTL slides. P@SHA compensation detail, a comparable 2015 historical endpoint and certain original Pakistan reports were inaccessible; the later revision adds limited Indeed/employer compensation evidence. Speaker name/employer/date remain omitted. The documented development-only braces advisory is still unpatched upstream; production dependency audit is clean. GitHub template status remains an owner/API administration step; main is already the default branch and Issues are enabled.
 
-## Revised 11-slide keynote — 17 October 2026
+## Revised 11-slide keynote — 17 October 2026 (historical)
 
 The event registry now contains **11 slides**, centered on concepts, system ownership, overlapping web eras, spec-driven AI collaboration, checking behavior and practical entry into work. The standalone learning-loop slide is removed; its useful guidance is integrated into concepts, verification and portfolio advice. The closing has a keyboard-accessible interview-answer reveal and a QR linking directly to this branch’s handout. Main remains unchanged.
 
@@ -58,3 +58,18 @@ Performed after the revision:
 - Seven exported JavaScript chunks total **615,713 raw bytes / 190,598 gzip bytes**. No runtime service or additional library was added.
 
 Remaining evidence limits: no verified six-year worldwide/Pakistan web-job creation series, representative matched global on-site/remote pay comparison, or individual future salary forecast. US employment is not Pakistan vacancies; platform estimates and single adverts are not representative salary bands. Existing host/browser, accessibility and deployment limits above still apply. The English-only keynote does not claim a complete Urdu translation.
+
+## Evidence, constant footer and responsive correction — current result
+
+Completed 17 October 2026, on top of the author’s `4ce0cb1` commit. The 11-slide order, supplied identity and core teaching interactions are retained. All changes are event-specific; shared shell, navigation, localization and theme code match `main`. No event content was ported into the starter.
+
+- Rechecked original reports, survey question tables, company engineering posts and employer policies. The current evidence ledger documents what was read, exact links, dates, populations and inaccessible sources. Usage, trust, self-reported checking, raw-model security benchmarks, job-posting indices, forecasts and salary examples have distinct labels. Unsupported guarantees and incomplete salary placeholders are removed.
+- Every slide now has the same COMSATS/talk identity and a **Sources** button. Its local native dialog includes exact primary references and scope notes. Initial focus, Tab/Shift+Tab containment, Escape/focus return and suspended slide shortcuts passed browser checks. Full reports remain external links; opening the local panel requires no external request.
+- Phones, tablets and short windows use a readable flow at widths up to 1100px or heights up to 650px. Larger screens retain the 16:9 composition. Slide 5’s paragraph specificity and percentage wrapping were fixed; the security grid now allows content to shrink and wrap. Small chart-date labels were raised to 12px in reading mode. Horizontal overflow is not hidden to conceal layout failures.
+- `npm run check` (ESLint, Prettier, strict TypeScript), `npm run build` and the Chromium suite passed: **11 tests passed, 1 opt-in localization test deliberately skipped**. Expanded coverage checks 12 sizes in all four themes, plus body/detail text sizes and every source dialog on seven phone/tablet sizes. Existing history, direct links, boundaries, theme/state, overview, fullscreen, custom-widget and reduced-motion checks passed. Core layout checks blocked external network requests.
+- A fresh **572-render matrix** (11 slides × 4 themes × 13 sizes) reported no slide/page horizontal overflow, clipped stage content, missing assets or page errors. Viewports: 1920×1080, 1366×768, 1024×768, 1280×600, 390×844, 320×568, 768×1024, 820×1180, 834×1194, 1024×1366, 1180×820, 844×390 and 640×360. The security and closing revealed states were also checked for stage overflow in each combination.
+- Fresh full-deck contact sheets were inspected in Paper, Midnight, Blueprint and Sand. Tablet/phone evidence and security renders were inspected at full size; the source dialogs were rendered in all four themes at desktop and phone sizes. `docs/deck-overview.jpg` is refreshed from the current production export.
+- An additional **92 axe-core 4.14.0 audits** (11 slides + 11 source panels + overview, in each theme) reported **zero automated WCAG A/AA violations**. Axe remains a temporary external verification utility, not a project/runtime dependency.
+- `npm audit --omit=dev` reported zero production vulnerabilities. No new dependency or runtime service was introduced. Research values and source summaries remain local.
+
+Remaining limits: testing used Chromium on this WSL host with the documented platform override, not every browser/device or a physical projector. Automated audits do not replace real assistive-technology testing. The event is English-only; the starter’s opt-in translation example was not re-enabled because its shared implementation is unchanged. Full original Pakistan report/pay-survey access remains blocked; no numerical claims rely on unread tables. No representative matched on-site/remote salary comparison, annual worldwide/Pakistan job-creation series, or future salary forecast was established. Source estimates and historical data may be revised by publishers. Printing, repository-subpath deployment and owner template-status limits above remain unchanged.

@@ -24,7 +24,7 @@ npm run preview
 
 Open http://localhost:3000. Preview serves the static `out/` export; restart it after rebuilding. No `next start`, runtime API, database or external assets are needed. Once dependencies/build output exist, the core deck works without internet while the local server runs. Citation/repository links need internet when opened. `file://` is unsupported.
 
-Use ←/→, Page Up/Down, Space/Shift+Space and Home/End. **G** opens the keyboard-accessible overview. **F** requests fullscreen. Controls remain available for touch; shortcuts pause inside interactive content. Themes persist and keep interaction state. Deep links include `/#review-the-code` and `/#try-the-work`. Motion respects reduced-motion preferences; phone layouts scroll naturally.
+Use ←/→, Page Up/Down, Space/Shift+Space and Home/End. **G** opens the keyboard-accessible overview. **F** requests fullscreen. Controls remain available for touch; shortcuts pause inside interactive content. Themes persist and keep interaction state. Phones, tablets and short windows use a readable scrolling layout; larger screens retain the 16:9 composition. Deep links include `/#review-the-code` and `/#try-the-work`. Motion respects reduced-motion preferences; phone layouts scroll naturally.
 
 The request trace on slide 2, ownership review on slide 6 and interview-answer reveal on slide 11 are local teaching interactions. Security pseudocode is illustrative, not production security certification. The event is English-only by default. The compact opt-in Urdu example belongs to the neutral starter on main; this talk is not a complete translation.
 
@@ -36,9 +36,9 @@ The request trace on slide 2, ownership review on slide 6 and interview-answer r
 - [Asset credits and licenses](docs/asset-credits.md).
 - [Performed validation and remaining limitations](docs/validation.md).
 
-**Research cutoff: 17 October 2026.** Slide 5 uses the original Stack Overflow usage and checking questions. Slide 7 shows six US annual employment snapshots for 2020–2025, explicitly **not jobs created**; classification/method changes prevent a clean hiring trend. A separate BLS openings forecast is labeled as a forecast. Slide 8 adds a small Pakistan junior frontend pay estimate and a current international remote employer advert alongside the scoped US wage benchmark. These are different populations, not a matched remote/on-site comparison. No universal remote discount or future salary is asserted. Some P@SHA/Pakistan reports remain inaccessible; no figures from unread tables are used. Career guidance is speaker synthesis, not a hiring guarantee.
+**Research cutoff: 17 October 2026.** Every slide has a consistent COMSATS/talk footer and a **Sources** button with original links and scope notes. Slide 5 distinguishes adoption, trust and checking. Slide 7 shows dated US software-posting index snapshots and a separate seniority analysis, not jobs created. Slide 8 compares a limited Pakistan platform estimate, one remote employer advert and an all-level US benchmark; no universal remote discount or future salary is claimed. Documentation, company perspectives and studies are labeled separately. Some original Pakistan reports remain inaccessible and their export figures are omitted.
 
-No speaker name, role, employer or event date was supplied; the slides omit these rather than guessing. Add confirmed metadata to the opener/config if desired.
+The author’s supplied name and Software Engineer role appear on the opener. No employer or personal work history is invented.
 
 ## Author and check
 

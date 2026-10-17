@@ -28,7 +28,7 @@ For remote work, add clear written progress and handoff examples. For a first fr
 
 ## Check pay without importing a fantasy
 
-As inspected on 17 October 2026: [Indeed’s Pakistan junior frontend estimate](https://pk.indeed.com/career/junior-front-end-developer/salaries) is PKR 47,282/month average base, just 21 salaries, updated July 8. A [Canadian fintech’s Pakistan remote advert](https://www.mustakbil.com/jobs/job/1434430) lists PKR 80–180k/month for a role with two years’ listed experience and Vancouver overlap. They are limited examples, not a national salary ladder or guaranteed graduate offers.
+As inspected on 17 October 2026: [Indeed’s Pakistan junior frontend estimate](https://pk.indeed.com/career/junior-front-end-developer/salaries) is PKR 47,526/month average base, just 20 salaries, updated July 8, 2026. A [Canadian fintech’s Pakistan remote advert](https://www.mustakbil.com/jobs/job/1434430) lists PKR 80–180k/month for a role with two years’ listed experience and Vancouver overlap. They are limited examples, not a national salary ladder or guaranteed graduate offers.
 
 The [US BLS web-developer median](https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm) is $92,650/year for May 2025, all experience levels and work arrangements, not an on-site-only rate or Pakistan remote wage. [GitLab](https://handbook.gitlab.com/handbook/total-rewards/compensation/) uses local market pay; [Automattic’s experienced-engineer advert](https://automattic.com/work-with-us/job/experienced-software-engineer/) publishes a global USD 70–170k range regardless of location. Neither policy describes every remote employer. Check currency, period, benefits, tax, contract status, hours, equipment, leave and payment terms. No universal on-site/remote discount or future raise is established. See the [research ledger](research.md) for exact scope.
 
@@ -112,3 +112,14 @@ Choose one or two reports that answer your question; you do not need to read the
 | [Scott Hanselman podcast, January 2026](https://stackoverflow.blog/2026/01/13/vibe-code-anything-in-a-hanselminute/)                                                                                                         | Practitioner perspective on human judgment, separate from measured findings.                                                                                                                                                                                                |
 
 For an offer, ask about the actual role, geography, currency, pay period, base/benefits, hours, scope and contract. US annual wages, PKR monthly pay, freelance revenue and business profit measure different things. None is a promise about you.
+
+## Company practice and research: read them as different kinds of evidence
+
+- [GitHub’s Spec Kit introduction](https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/) explains intent, planning, small tasks and implementation. Try the process on one feature; it is a company workflow, not proof of universal adoption.
+- [Google code-review checklist](https://google.github.io/eng-practices/review/reviewer/looking-for.html) is a useful checklist for design, behavior, tests and clarity.
+- [Google/DORA’s 2025 research summary](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) discusses delivery conditions around AI; organizational associations do not establish a universal speed gain.
+- [Anthropic’s coding-skills study explanation](https://www.anthropic.com/research/AI-assistance-coding-skills) and the linked original paper concern the same small experiment. Treat learning as something to check by explaining and modifying code independently.
+- [Microsoft Research / CHI critical-thinking study](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/01/lee_2025_ai_critical_thinking_survey.pdf) examines self-reported knowledge work, not permanent coding-skill loss.
+- [Indeed’s original hiring analysis](https://hiringlab.indeed.com/2026/07/08/ai-and-job-postings-from-destruction-to-creation/) separates growth in senior postings from the level of all demand. The presentation’s dated index values come from the [original FRED table](https://fred.stlouisfed.org/data/IHLIDXUSTPSOFTDEVE.txt).
+
+On any slide, open **Sources** for its exact references and limits. Use reports to inform a decision, not to promise yourself a salary or hiring deadline.
