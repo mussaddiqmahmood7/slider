@@ -47,13 +47,10 @@ export default function Foundations() {
         </aside>
       </div>
       <p className="revision-takeaway">
-        Concepts transfer across tools. Moving between stacks becomes much
-        faster once you understand the invariants.
+        Concepts transfer. When changing stacks, verify the APIs, libraries and
+        runtime behavior.
       </p>
-      <Footer
-        section="ENGINEERING FOUNDATIONS · UNDERSTAND, BUILD, EXPLAIN"
-        refs={['foundations']}
-      />
+      <Footer refs={['foundations', 'learning', 'criticalThinking']} />
     </div>
   );
 }

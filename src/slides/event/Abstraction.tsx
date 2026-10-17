@@ -8,25 +8,25 @@ const waves = [
     'Structure + behavior',
   ],
   [
-    '2010s',
+    '2000s onward',
     'Reuse a function',
     'jQuery · plugins · utilities',
     'Choose + integrate',
   ],
   [
-    '2015s',
+    '2010s onward',
     'Compose the UI',
     'React · Bootstrap · Tailwind',
     'State + design systems',
   ],
   [
-    '2020s',
+    '2010s–2020s',
     'Build the application',
     'Next.js · Nuxt · Remix',
     'Routing + data + delivery',
   ],
   [
-    '2026+',
+    '2020s onward',
     'Direct and verify AI',
     'Requirements → spec → verified diff',
     'Architecture + verification',
@@ -40,9 +40,9 @@ export default function Abstraction() {
         EVOLUTION / OVERLAPPING WAVES OF ABSTRACTION
       </Chapter>
       <h1>
-        Every era hid the last one.
+        Tools raise the abstraction.
         <br />
-        <em>The spec is next.</em>
+        <em>Judgment stays with you.</em>
       </h1>
       <ol
         className="web-waves"
@@ -59,18 +59,13 @@ export default function Abstraction() {
         ))}
       </ol>
       <div className="wave-ownership">
-        <span>
-          A NON-ENGINEER CAN PROTOTYPE, BUT CANNOT OWN PRODUCTION ARCHITECTURE
-        </span>
+        <span>WHO REVIEWS THE SPEC?</span>
         <p>
-          Someone must write the spec, define data constraints, and audit the
-          diff. That someone is you.
+          Domain experts explain the need. Developers turn it into rules, design
+          the system and verify the change.
         </p>
       </div>
-      <Footer
-        section="ABSTRACTION LADDER · EACH ERA EXPANDS WHAT ONE ENGINEER CAN SHIP"
-        refs={['specs']}
-      />
+      <Footer refs={['jquery', 'nextHistory', 'specs']} />
     </div>
   );
 }

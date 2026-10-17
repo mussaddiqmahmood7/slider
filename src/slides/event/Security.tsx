@@ -13,9 +13,10 @@ export default function Security() {
         <em>Who decides what’s correct?</em>
       </h1>
       <div className="security-stat-banner">
-        <span>[ ! ] BENCHMARK EVIDENCE:</span> {e.security.riskyFlawPercent}% of
-        benchmark tasks produced a risky flaw; {e.security.xssFailurePercent}%
-        failed XSS (CWE-80) (Veracode 2026, vendor benchmark).
+        <span>[ ! ] BENCHMARK EVIDENCE:</span> {e.security.riskyFlawPercent}%
+        security failure rate in raw-model tasks; {e.security.xssFailurePercent}
+        % in the XSS subset. No security-specific prompting. Not a production
+        breach rate.
       </div>
       <div className="security-grid">
         <div className="code-comparison">
@@ -87,10 +88,7 @@ export default function Security() {
         Specify <span>→</span> Plan <span>→</span> Small diff <span>→</span>{' '}
         Review + test
       </p>
-      <Footer
-        section="SPEC-DRIVEN ENGINEERING · VIBE CODING VS. SPEC VERIFICATION"
-        refs={['security', 'specs']}
-      />
+      <Footer refs={['security', 'access', 'reviewPractice', 'specs']} />
     </div>
   );
 }

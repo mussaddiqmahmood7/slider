@@ -29,12 +29,12 @@ export const slides: readonly SlideDefinition[] = [
   },
   {
     id: 'abstraction',
-    title: 'Every era hid the last one. The spec is next.',
+    title: 'Tools raise the abstraction; judgment stays with you',
     component: Abstraction,
   },
   {
     id: 'ai-in-practice',
-    title: 'Everyone uses AI. Few trust it with big decisions.',
+    title: 'Most surveyed developers use AI; trust has conditions',
     component: Evidence,
   },
   {
@@ -44,7 +44,7 @@ export const slides: readonly SlideDefinition[] = [
   },
   {
     id: 'market-evidence',
-    title: 'Entry is harder. Demand for proof is higher.',
+    title: 'Hiring recovered unevenly; make your ability visible',
     component: Market,
   },
   {

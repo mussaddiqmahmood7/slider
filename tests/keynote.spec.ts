@@ -29,7 +29,7 @@ test('projector layouts keep every slide and its source footer visible without e
   page,
   context,
 }) => {
-  test.setTimeout(60_000);
+  test.setTimeout(120_000);
   const outside: string[] = [];
   await context.route('**/*', (route) => {
     if (new URL(route.request().url()).hostname !== 'localhost') {
@@ -45,6 +45,13 @@ test('projector layouts keep every slide and its source footer visible without e
     { width: 1024, height: 768 },
     { width: 1280, height: 600 },
     { width: 390, height: 844 },
+    { width: 320, height: 568 },
+    { width: 768, height: 1024 },
+    { width: 820, height: 1180 },
+    { width: 834, height: 1194 },
+    { width: 1024, height: 1366 },
+    { width: 1180, height: 820 },
+    { width: 844, height: 390 },
   ]) {
     await page.setViewportSize(viewport);
     await page.goto('/');
@@ -105,4 +112,109 @@ test('closing reveal is keyboard accessible and survives theme changes', async (
     'href',
     /presentation\/comsats-sahiwal\/docs\/student-resources.md$/,
   );
+});
+
+test('sources use a constant footer and contain keyboard focus without moving the slide', async ({
+  page,
+}) => {
+  await page.goto('/#ai-in-practice');
+  await expect(page.locator('.deck')).toHaveAttribute('aria-busy', 'false');
+  const trigger = page.getByRole('button', { name: 'Sources', exact: true });
+  const identity = await page.locator('.footer-identity').innerText();
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Sources & context' });
+  await expect(dialog).toBeVisible();
+  const close = dialog.getByRole('button', { name: 'Close sources' });
+  await expect(close).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await page.keyboard.press('g');
+  await expect(page).toHaveURL(/#ai-in-practice$/);
+  await expect(page.getByRole('dialog', { name: 'Slides' })).toHaveCount(0);
+  await close.focus();
+  await page.keyboard.press('Shift+Tab');
+  await expect(dialog.getByRole('link').last()).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(close).toBeFocused();
+  await expect(
+    dialog.getByRole('link', { name: /trust question/ }),
+  ).toHaveAttribute('href', /ai-trust$/);
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await page.getByRole('button', { name: 'Next', exact: true }).click();
+  await expect(page.locator('.footer-identity')).toHaveText(identity);
+  await expect(
+    page.getByRole('button', { name: 'Sources', exact: true }),
+  ).toBeVisible();
+});
+
+test('tablet and phone reading layouts keep body text readable and every source panel inside the viewport', async ({
+  page,
+}) => {
+  test.setTimeout(120_000);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const viewport of [
+    { width: 320, height: 568 },
+    { width: 390, height: 844 },
+    { width: 768, height: 1024 },
+    { width: 820, height: 1180 },
+    { width: 834, height: 1194 },
+    { width: 1024, height: 768 },
+    { width: 1024, height: 1366 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto('/');
+    await expect(page.locator('.deck')).toHaveAttribute('aria-busy', 'false');
+    const identity = await page.locator('.footer-identity').innerText();
+    for (let i = 0; i < 11; i++) {
+      const report = await page.locator('.slide-content').evaluate((el) => {
+        const problems: string[] = [];
+        for (const node of el.querySelectorAll<HTMLElement>(
+          'p,li,dd,dt,small,.route-action,.source-kind,.stat-kicker,.footer-identity',
+        )) {
+          if (node.closest('dialog') || !node.getClientRects().length) continue;
+          const size = parseFloat(getComputedStyle(node).fontSize);
+          const detail =
+            node.matches(
+              'small,dt,.stat-kicker,.footer-identity,.speaker-badge,.diagram-caption,.employment-chart > p',
+            ) ||
+            node.closest('.employment-column') ||
+            node.classList.contains('code-lesson') ||
+            node.classList.contains('revision-takeaway') ||
+            node.classList.contains('paths-reality-note') ||
+            node.closest('.challenge-strip') ||
+            (node.closest('.portfolio-receipt') && node.matches('p'));
+          if (size < (detail ? 11 : 16))
+            problems.push(
+              node.tagName +
+                ': ' +
+                size +
+                'px ' +
+                node.textContent?.slice(0, 35),
+            );
+        }
+        return {
+          problems,
+          horizontal: document.documentElement.scrollWidth > innerWidth + 1,
+        };
+      });
+      expect(report, JSON.stringify({ viewport, slide: i + 1 })).toEqual({
+        problems: [],
+        horizontal: false,
+      });
+      await expect(page.locator('.footer-identity')).toHaveText(identity);
+      await page.getByRole('button', { name: 'Sources', exact: true }).click();
+      const dialog = page.getByRole('dialog', { name: 'Sources & context' });
+      const box = await dialog.boundingBox();
+      expect(box!.x).toBeGreaterThanOrEqual(0);
+      expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width + 1);
+      expect(box!.y + box!.height).toBeLessThanOrEqual(viewport.height + 1);
+      expect(
+        await dialog.evaluate((el) => el.scrollWidth <= el.clientWidth + 1),
+      ).toBe(true);
+      await page.keyboard.press('Escape');
+      if (i < 10)
+        await page.getByRole('button', { name: 'Next', exact: true }).click();
+    }
+  }
 });

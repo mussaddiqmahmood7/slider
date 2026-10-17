@@ -40,9 +40,7 @@ export default function Paths() {
           ))}
         </ol>
         <aside className="portfolio-receipt">
-          <span className="stat-kicker">
-            TUTORIAL PROJECT VS. ENGINEERING PROJECT
-          </span>
+          <span className="stat-kicker">A PROJECT SOMEONE CAN REVIEW</span>
           <h2>Campus event booking</h2>
           <ul>
             <li>
@@ -65,10 +63,10 @@ export default function Paths() {
         </aside>
       </div>
       <p className="paths-reality-note">
-        Junior competition is real and continuous learning never stops. One
-        shipped, inspectable system beats a generic CV.
+        Junior competition is real and continuous learning never stops. Show
+        inspectable work alongside a clear, targeted application.
       </p>
-      <Footer section="FRESHER STRATEGY · PRODUCTION STANDARDS BEAT GENERIC CVs" />
+      <Footer refs={['reviewPractice', 'learning']} />
     </div>
   );
 }

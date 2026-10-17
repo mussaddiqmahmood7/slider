@@ -1,4 +1,3 @@
-import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
 
 export default function Tradeoffs() {
@@ -7,7 +6,7 @@ export default function Tradeoffs() {
       name: 'Local team',
       scope: 'Software houses · on-site / hybrid',
       tradeoff:
-        'Lower starting pay vs rapid in-person senior mentorship and team habits.',
+        'Look for review and mentorship; pay and support vary by employer.',
       action:
         'Ship one complete CRUD app with auth and walk into an interview with a live demo.',
     },
@@ -15,7 +14,7 @@ export default function Tradeoffs() {
       name: 'Remote team',
       scope: 'Global startups · async distributed',
       tradeoff:
-        'Zero handholding and strict async communication vs global USD market compensation.',
+        'Clear written communication and reliable delivery; pay follows employer policy.',
       action:
         'Record a 2-minute Loom walkthrough explaining an architectural decision and commit clean PRs.',
     },
@@ -31,7 +30,7 @@ export default function Tradeoffs() {
       name: 'Own product',
       scope: 'Micro-SaaS · niche tools',
       tradeoff:
-        'Zero guaranteed salary and total market risk vs 100% equity and product ownership.',
+        'More product control, with customer, support and revenue risk.',
       action:
         'Talk to 5 students or local businesses about their biggest spreadsheet headache before writing code.',
     },
@@ -67,18 +66,13 @@ export default function Tradeoffs() {
         ))}
       </div>
       <div className="route-tradeoff">
-        <strong>NATIONAL DEMAND CONTEXT:</strong>
+        <strong>Choose your next responsibility.</strong>
         <span>
-          Pakistan freelance tech exports reached {e.exports.freelanceUsd}, up +
-          {e.exports.freelanceGrowthPercent}% in {e.exports.period} (State Bank
-          of Pakistan via Economic Survey). Choose the door matching your
-          current proof.
+          Grow from a task to a feature to a system. Keep learning and scope
+          sustainable.
         </span>
       </div>
-      <Footer
-        section="CAREER STRATEGY · START WITH MENTORSHIP, SCALE TO INDEPENDENCE"
-        refs={['pakExports']}
-      />
+      <Footer refs={['payPolicy', 'globalPay', 'reviewPractice']} />
     </div>
   );
 }

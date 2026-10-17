@@ -79,7 +79,7 @@ export default function System() {
         {trace ? 'Reset booking trace' : 'Trace a seat reservation'}{' '}
         <span aria-hidden="true">↗</span>
       </button>
-      <Footer section="END-TO-END SYSTEM THINKING · FROM CLICK TO DATABASE" />
+      <Footer refs={['outlook', 'access']} />
     </div>
   );
 }

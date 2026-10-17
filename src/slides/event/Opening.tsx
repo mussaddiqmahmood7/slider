@@ -18,11 +18,11 @@ export default function Opening() {
             <em>web development?</em>
           </h1>
           <p className="opening-subtitle">
-            Syntax got cheap. Judgment got expensive.
+            AI can draft the code. You own the decisions.
           </p>
           <p className="opening-definition">
-            Anyone can prompt a prototype. An engineer ships systems people can
-            rely on.
+            A prototype is a start. Reliable delivery needs clear rules, review
+            and testing.
           </p>
         </div>
         <div
@@ -37,7 +37,7 @@ export default function Opening() {
               <i />
               <i />
               <i />
-              <span>Prompt prototype · generated in 15s</span>
+              <span>AI-generated prototype · illustration</span>
             </div>
             <div className="course-sketch">
               <small>SURFACE INTERFACE</small>
@@ -71,7 +71,7 @@ export default function Opening() {
           </div>
         </div>
       </div>
-      <Footer section="COMSATS UNIVERSITY ISLAMABAD · SAHIWAL CAMPUS" />
+      <Footer refs={['dora', 'outlook']} />
     </div>
   );
 }

@@ -10,9 +10,7 @@ export default function Closing() {
       <Chapter number="11">THE CLOSING / YOUR NEXT MOVE</Chapter>
       <div className="closing-interview">
         <div className="interview-copy">
-          <span className="stat-kicker">
-            “AI COULD BUILD THIS IN 15 MINUTES.”
-          </span>
+          <span className="stat-kicker">“AI COULD BUILD THIS.”</span>
           <h1>
             Why should
             <br />
@@ -48,7 +46,7 @@ export default function Closing() {
               <>
                 <strong>The demo starts the conversation.</strong>
                 <p>
-                  Your decisions, debugging, and proof of correctness
+                  Your decisions, debugging, and evidence
                   <br />
                   show what you contribute.
                 </p>
@@ -56,10 +54,10 @@ export default function Closing() {
             )}
           </div>
           <div className="challenge-strip">
-            <span className="stat-kicker">THIS MONDAY’S SPEC CHALLENGE:</span>
+            <span className="stat-kicker">YOUR NEXT REVIEW:</span>
             <p>
-              Direct AI to build a real campus workflow—then catch and document
-              3 bugs your AI made before shipping.
+              Write the spec. Test a success and a forbidden case. Explain one
+              decision you made before shipping.
             </p>
           </div>
         </div>
@@ -85,7 +83,7 @@ export default function Closing() {
         </a>
       </div>
 
-      <Footer section="BUILD WITH AI. BECOME SOMEONE PEOPLE CAN TRUST TO SHIP." />
+      <Footer refs={['specs', 'reviewPractice', 'anthropic']} />
     </div>
   );
 }
