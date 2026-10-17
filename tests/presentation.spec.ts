@@ -133,3 +133,32 @@ test('fast keys, reduced motion, fullscreen and no third-party requests', async 
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
 });
+
+test('custom widgets, editable fields and modifier keys retain ownership of input', async ({
+  page,
+}) => {
+  await open(page, '/');
+  await page.evaluate(() => {
+    const widget = document.createElement('div');
+    widget.role = 'checkbox';
+    widget.tabIndex = 0;
+    widget.setAttribute('aria-checked', 'false');
+    widget.id = 'author-widget';
+    widget.textContent = 'Author-controlled widget';
+    document.querySelector('.slide')?.append(widget);
+  });
+  await page.locator('#author-widget').focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(page.locator('.counter')).toContainText('01');
+  await page.evaluate(() => {
+    const input = document.createElement('input');
+    input.id = 'author-input';
+    document.querySelector('.slide')?.append(input);
+  });
+  await page.locator('#author-input').fill('slide author text');
+  await page.keyboard.press('End');
+  await expect(page.locator('.counter')).toContainText('01');
+  await page.locator('body').click({ position: { x: 3, y: 3 } });
+  await page.keyboard.press('Control+ArrowRight');
+  await expect(page.locator('.counter')).toContainText('01');
+});
