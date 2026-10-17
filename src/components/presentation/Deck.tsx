@@ -32,7 +32,7 @@ const serverSnapshot = () => '';
 const interactive = (target: EventTarget | null) =>
   target instanceof Element &&
   !!target.closest(
-    'input, textarea, select, button, a, summary, [contenteditable]:not([contenteditable="false"]), [role="button"], [role="slider"], [role="textbox"]',
+    'input, textarea, select, button, a, summary, [contenteditable]:not([contenteditable="false"]), [role="button"], [role="slider"], [role="textbox"], [role="checkbox"], [role="combobox"], [role="listbox"], [role="radio"], [role="switch"], [role="tab"], [role="menuitem"], [role="spinbutton"], [role="link"]',
   );
 
 export default function Deck() {
