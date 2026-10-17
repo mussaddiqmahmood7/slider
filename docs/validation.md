@@ -25,9 +25,9 @@ A clean `npm ci`, check before building with no `.next` directory, and a fresh b
 
 The owner supplied [the public repository](https://github.com/mussaddiqmahmood7/slider); main is the default branch. Main CI [39013967894](https://github.com/mussaddiqmahmood7/slider/actions/runs/39013967894) passed, and v0.1.0 was pushed before event development. A subsequent accessibility audit found low-contrast muted controls in Sand; main's token was darkened and the core suite was rechecked. Custom ARIA widgets also keep keyboard ownership. An axe-core audit supplements the behavior suite, without adding another test runner or runtime dependency. Template status still requires repository administration API access or the owner's GitHub setting.
 
-## COMSATS presentation result
+## Initial COMSATS presentation result — historical
 
-The event registry contains 12 slides. The opening, system diagram and evidence composition were rendered at 1920×1080 and 1366×768 in all four themes before the remaining deck was filled. The visual direction uses editorial typography, ruled diagrams, a schematic ladder, labeled evidence, comparisons and a practice loop; all inherit semantic theme colors. `docs/deck-overview.jpg` shows the finished layout variety.
+The initial event registry contained 12 slides, before the content revision below. The opening, system diagram and evidence composition were rendered at 1920×1080 and 1366×768 in all four themes before the remaining deck was filled. The visual direction uses editorial typography, ruled diagrams, a schematic ladder, labeled evidence, comparisons and a practice loop; all inherit semantic theme colors. `docs/deck-overview.jpg` shows the finished layout variety.
 
 Final local checks:
 
@@ -41,4 +41,20 @@ Final local checks:
 - The event export is about **1008 KiB**. Seven JavaScript chunks total **614,470 raw bytes / 189,792 gzip bytes**, including framework code. There is no chart, carousel or animation runtime dependency.
 - Main remains generic. The shared Sand contrast/custom-widget fix was committed and validated on main, then cherry-picked into the event branch. Latest main CI [39014887111](https://github.com/mussaddiqmahmood7/slider/actions/runs/39014887111) passed. Event CI is checked against the pushed branch through [GitHub Actions](https://github.com/mussaddiqmahmood7/slider/actions).
 
-Limits: no physical projector, real screen-reader session, Safari/Firefox run, repository-subpath deployment or whole-deck printing was tested. The main-source Urdu example does not certify arbitrary RTL slides. Current local compensation detail, a comparable 2015 historical endpoint and certain original Pakistan reports were inaccessible; see the ledger. Speaker name/employer/date remain omitted. The documented development-only braces advisory is still unpatched upstream; production dependency audit is clean. GitHub template status remains an owner/API administration step; main is already the default branch and Issues are enabled.
+Limits: no physical projector, real screen-reader session, Safari/Firefox run, repository-subpath deployment or whole-deck printing was tested. The main-source Urdu example does not certify arbitrary RTL slides. P@SHA compensation detail, a comparable 2015 historical endpoint and certain original Pakistan reports were inaccessible; the later revision adds limited Indeed/employer compensation evidence. Speaker name/employer/date remain omitted. The documented development-only braces advisory is still unpatched upstream; production dependency audit is clean. GitHub template status remains an owner/API administration step; main is already the default branch and Issues are enabled.
+
+## Revised 11-slide keynote — 17 October 2026
+
+The event registry now contains **11 slides**, centered on concepts, system ownership, overlapping web eras, spec-driven AI collaboration, checking behavior and practical entry into work. The standalone learning-loop slide is removed; its useful guidance is integrated into concepts, verification and portfolio advice. The closing has a keyboard-accessible interview-answer reveal and a QR linking directly to this branch’s handout. Main remains unchanged.
+
+Performed after the revision:
+
+- ESLint, Prettier, strict TypeScript and production static export passed. Real commit hooks ran successfully.
+- **9 Chromium tests passed; 1 starter-only opt-in localization test was deliberately skipped.** The new test covers the closing reveal, keyboard activation, theme/state persistence and resource target. The layout test asserts exactly 11 overview entries. Existing navigation, history, overview focus, fullscreen, reduced motion, security-review and no-external-service checks passed.
+- A fresh **220-render matrix** (11 slides × 4 themes × 5 viewports) reported no slide overflow, missing assets or page errors. Sizes: 1920×1080, 1366×768, 1024×768, 1280×600 and 390×844. The first pass found concepts-slide clipping; row spacing/line heights were corrected before the successful rerun. Obsolete composition styles were removed.
+- Fresh contact sheets were inspected in Paper, Midnight, Blueprint and Sand. Full-size timeline, evidence, market, pay, workflow and closing renders were inspected. `docs/deck-overview.jpg` now shows the 11-slide version.
+- **axe-core 4.14.0 reported zero automated WCAG A/AA violations** across the 11 slides and overview in all themes. This does not substitute for screen-reader user testing or physical projector rehearsal.
+- All research values were checked against original question tables, BLS releases, platform estimates or employer-authored adverts. The six annual chart values are explicitly employment snapshots, not job creation. The 2022 total was corrected during source cross-checking before commit. Current Pakistan pay evidence and remote-policy limits are documented in `research.md`.
+- Seven exported JavaScript chunks total **615,713 raw bytes / 190,598 gzip bytes**. No runtime service or additional library was added.
+
+Remaining evidence limits: no verified six-year worldwide/Pakistan web-job creation series, representative matched global on-site/remote pay comparison, or individual future salary forecast. US employment is not Pakistan vacancies; platform estimates and single adverts are not representative salary bands. Existing host/browser, accessibility and deployment limits above still apply. The English-only keynote does not claim a complete Urdu translation.
