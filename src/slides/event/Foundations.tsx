@@ -1,57 +1,56 @@
 import { Chapter, Footer } from './Parts';
 export default function Foundations() {
   return (
-    <div className="slide-content foundations-slide">
-      <Chapter number="03">TECHNOLOGIES / CONCEPTS BEFORE TOOLS</Chapter>
+    <div className="slide-content concepts-slide">
+      <Chapter number="03">SKILLS / UNDERSTANDING OUTLASTS SYNTAX</Chapter>
       <h1>
-        Learn the foundations.
+        Learn the concepts.
         <br />
-        <em>Then choose a stack.</em>
+        <em>Look up the syntax.</em>
       </h1>
-      <div className="foundation-map">
-        <dl className="foundation-list">
+      <div className="concepts-grid">
+        <div className="concept-ledger">
           <div>
-            <dt>HTML + accessibility</dt>
-            <dd>Meaning, labels, native controls</dd>
+            <strong>Interface</strong>
+            <span>Meaning, accessibility, layout, state</span>
           </div>
           <div>
-            <dt>CSS</dt>
-            <dd>Layout, sizing, responsiveness</dd>
+            <strong>System</strong>
+            <span>HTTP, data models, permissions, failures</span>
           </div>
           <div>
-            <dt>JavaScript</dt>
-            <dd>State, events, async, errors</dd>
+            <strong>Delivery</strong>
+            <span>Git, debugging, tests, deployment</span>
           </div>
           <div>
-            <dt>HTTP + data</dt>
-            <dd>Requests and boundaries</dd>
+            <strong>AI collaboration</strong>
+            <span>Clear specs, context, small changes, review</span>
           </div>
-          <div>
-            <dt>Git + DevTools</dt>
-            <dd>Inspect, explain, correct</dd>
-          </div>
-        </dl>
-        <div className="stack-column">
-          <span className="stack-bracket" aria-hidden="true">
-            ↗
-          </span>
-          <small>ONE REPRESENTATIVE PATH</small>
-          <h2>
-            React
-            <br />
-            <span>+ TypeScript</span>
-          </h2>
-          <div className="stack-rule" />
-          <h2>Next.js</h2>
-          <p>
-            Understand why
-            <br />
-            the tools work.
-          </p>
         </div>
+        <aside className="concept-answer">
+          <span className="stat-kicker">IS HTML STILL WORTH LEARNING?</span>
+          <h2>
+            Yes. Learn what
+            <br />
+            good output means.
+          </h2>
+          <p>
+            A real button. A labeled input.
+            <br />A page everyone can use.
+          </p>
+          <p>
+            Use one stack to build depth.
+            <br />
+            Transfer the ideas to the next.
+          </p>
+        </aside>
       </div>
+      <p className="revision-takeaway">
+        AI can translate code. You still check behavior, libraries and runtime
+        differences.
+      </p>
       <Footer
-        section="UNDERSTAND CONCEPTS · LOOK UP API DETAILS"
+        section="PRACTICAL GUIDANCE · UNDERSTAND, BUILD, EXPLAIN"
         refs={['foundations']}
       />
     </div>

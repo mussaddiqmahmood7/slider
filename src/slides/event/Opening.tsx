@@ -12,7 +12,9 @@ export default function Opening() {
             <br />
             <em>built.</em>
           </h1>
-          <p className="opening-subtitle">Your role is changing.</p>
+          <p className="opening-subtitle">
+            From writing code to owning outcomes.
+          </p>
           <p className="opening-definition">
             Web development turns a user need into a working web experience.
           </p>

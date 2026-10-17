@@ -1,42 +1,60 @@
 import { Chapter, Footer } from './Parts';
 export default function Tradeoffs() {
+  const paths = [
+    [
+      'Local team',
+      'Internship / junior role',
+      'Show a relevant demo; ask who reviews your work.',
+      'Learn delivery + team habits.',
+    ],
+    [
+      'Remote team',
+      'A small reviewed contribution',
+      'Show written updates, reliable handoff and async work.',
+      'Earn trust across distance.',
+    ],
+    [
+      'Freelance',
+      'One bounded client problem',
+      'Agree scope, milestones, payment and handover.',
+      'Deliver, then ask for a referral.',
+    ],
+    [
+      'Own product',
+      'A user with a recurring problem',
+      'Talk to users before building; test willingness to pay.',
+      'Own support + distribution.',
+    ],
+  ];
   return (
-    <div className="slide-content tradeoffs-slide">
-      <Chapter number="10">FIT / AN HONEST VIEW OF THE WORK</Chapter>
+    <div className="slide-content route-slide">
+      <Chapter number="10">OPPORTUNITY / CHOOSE YOUR FIRST DOOR</Chapter>
       <h1>
-        The upside is real.
+        One skill base.
         <br />
-        <em>So is the work.</em>
+        <em>Four ways to use it.</em>
       </h1>
-      <div className="balance-grid">
-        <section>
-          <span className="balance-symbol" aria-hidden="true">
-            ↗
-          </span>
-          <h2>What you gain</h2>
-          <ul>
-            <li>Make useful things.</li>
-            <li>See your ideas work.</li>
-            <li>Explore several paths.</li>
-          </ul>
-        </section>
-        <section>
-          <span className="balance-symbol" aria-hidden="true">
-            ↔
-          </span>
-          <h2>What it asks of you</h2>
-          <ul>
-            <li>Keep learning.</li>
-            <li>Debug uncertainty.</li>
-            <li>Compete. Communicate. Rest.</li>
-          </ul>
-        </section>
+      <div className="route-rows" role="list">
+        {paths.map(([name, start, action, growth], i) => (
+          <section role="listitem" key={name}>
+            <span className="route-number">0{i + 1}</span>
+            <h2>
+              {name}
+              <small>{start}</small>
+            </h2>
+            <p>{action}</p>
+            <strong>{growth}</strong>
+          </section>
+        ))}
       </div>
-      <p className="free-start">
-        Free documentation + local tools are enough to begin. Paid AI is
-        optional.
-      </p>
-      <Footer section="TRY THE WORK BEFORE BUYING THE CAREER STORY" />
+      <div className="route-tradeoff">
+        <strong>Grow your ownership.</strong>
+        <span>
+          Feature → reliable system → product decisions. More reach also means
+          learning, support and uncertainty.
+        </span>
+      </div>
+      <Footer section="CAREER GUIDANCE · SPECIALIZE DEEPLY, UNDERSTAND THE WHOLE" />
     </div>
   );
 }

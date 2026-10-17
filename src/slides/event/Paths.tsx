@@ -1,69 +1,55 @@
 import { Chapter, Footer } from './Parts';
 export default function Paths() {
-  const rows = [
+  const steps = [
     [
-      'Local employment',
-      'Team + feedback',
-      'Delivery + collaboration',
-      'Salary cycle',
+      '01',
+      'Build one useful thing',
+      'A real user. One complete workflow. One stack you can explain.',
     ],
     [
-      'Remote employment',
-      'Portfolio + writing',
-      'Async work + time zones',
-      'Salary / contract terms',
+      '02',
+      'Make the work inspectable',
+      'Live demo + README + small commits + tests + decisions.',
     ],
     [
-      'Freelance projects',
-      'Portfolio + client search',
-      'Scope + invoices',
-      'Project-based',
-    ],
-    [
-      'Your own product',
-      'Problem + customer discovery',
-      'Sales + support + cash flow',
-      'Uncertain until demand',
+      '03',
+      'Get feedback, then apply',
+      'A peer review. A targeted application. An alumni introduction.',
     ],
   ];
   return (
-    <div className="slide-content paths-slide">
-      <Chapter number="09">WORK / FOUR PATHS, DIFFERENT TRADEOFFS</Chapter>
+    <div className="slide-content first-job-slide">
+      <Chapter number="09">FRESHERS / MAKE YOUR ABILITY VISIBLE</Chapter>
       <h1>
-        A path is also
+        Your first advantage:
         <br />
-        <em>a set of responsibilities.</em>
+        <em>proof you can deliver.</em>
       </h1>
-      <table className="paths-table">
-        <caption>
-          Qualitative career guidance · terms vary by role and agreement
-        </caption>
-        <thead>
-          <tr>
-            <th>Path</th>
-            <th>Entry point</th>
-            <th>You also own</th>
-            <th>Pay rhythm</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row[0]}>
-              {row.map((cell, i) =>
-                i === 0 ? (
-                  <th key={cell}>{cell}</th>
-                ) : (
-                  <td key={cell}>{cell}</td>
-                ),
-              )}
-            </tr>
+      <div className="first-job-grid">
+        <ol className="proof-steps">
+          {steps.map(([n, title, detail]) => (
+            <li key={n}>
+              <span>{n}</span>
+              <div>
+                <h2>{title}</h2>
+                <p>{detail}</p>
+              </div>
+            </li>
           ))}
-        </tbody>
-      </table>
-      <p className="paths-takeaway">
-        Choose the work—and the uncertainty—you can sustain.
-      </p>
-      <Footer section="SPEAKER SYNTHESIS · NO INCOME PROMISES" />
+        </ol>
+        <aside className="portfolio-receipt">
+          <span className="stat-kicker">A PORTFOLIO THAT CAN BE REVIEWED</span>
+          <h2>Campus event booking</h2>
+          <ul>
+            <li>Register → confirm → cancel</li>
+            <li>Handle full / failed / duplicate</li>
+            <li>Explain one design tradeoff</li>
+            <li>Fix a bug live, with reasoning</li>
+          </ul>
+          <p>AI use is fine. Explain what you accepted, changed and tested.</p>
+        </aside>
+      </div>
+      <Footer section="PRACTICAL ROUTE · APPLY WHILE IMPROVING · NO FIXED HIRING TIMELINE" />
     </div>
   );
 }

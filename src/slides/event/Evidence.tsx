@@ -2,64 +2,56 @@ import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
 export default function Evidence() {
   return (
-    <div className="slide-content evidence-slide">
-      <Chapter number="05">AI / ASK WHAT THE NUMBER MEASURES</Chapter>
+    <div className="slide-content adoption-slide">
+      <Chapter number="05">AI / USE IT, THEN CHECK IT</Chapter>
       <h1>
-        Use is widespread.
+        AI is common.
         <br />
-        <em>Trust is conditional.</em>
+        <em>Review is still your job.</em>
       </h1>
-      <div className="evidence-grid">
-        <div className="usage-chart">
-          <p className="chart-scope">
-            Current use at work · survey respondents
-            <br />
-            <span>
-              Multi-select · n = {e.usage.respondents.toLocaleString('en-US')}
-            </span>
-          </p>
-          {[
-            {
-              label: 'Coding assistants / agents',
-              value: e.usage.coding.percent,
-            },
-            { label: 'Do not use AI tools', value: e.usage.nonUse.percent },
-          ].map((row) => (
-            <div className="bar-row" key={row.label}>
+      <div className="adoption-grid">
+        <section className="adoption-numbers">
+          <span className="stat-kicker">USE AT WORK · n = 17,464</span>
+          <div>
+            <strong>
+              {e.usage.anyRounded}
+              <small>%</small>
+            </strong>
+            <p>use at least one AI tool</p>
+          </div>
+          <div className="non-use">
+            <strong>
+              {e.usage.nonUseRounded}
+              <small>%</small>
+            </strong>
+            <p>do not use AI tools</p>
+          </div>
+          <small>Rounded publisher summary · survey respondents</small>
+        </section>
+        <section className="review-chart">
+          <span className="stat-kicker">
+            BEFORE USING AN AI ANSWER · n = 13,162
+          </span>
+          {e.review.actions.map(({ label, percent }) => (
+            <div className="review-bar" key={label}>
               <div>
-                <span>{row.label}</span>
-                <strong>{row.value}%</strong>
+                <span>{label}</span>
+                <strong>{percent}%</strong>
               </div>
-              <div className="bar-track">
-                <div style={{ width: `${row.value}%` }} />
+              <div className="review-track">
+                <span style={{ width: `${percent}%` }} />
               </div>
             </div>
           ))}
-          <p className="chart-note">
-            Separate selections. These bars do not add to 100%.
+          <p className="review-scope">
+            Multiple choices allowed. “Use as-is” is self-report, not a measured
+            rate of blind acceptance.
           </p>
-        </div>
-        <aside className="trust-stat">
-          <span className="stat-kicker">A DIFFERENT QUESTION: TRUST</span>
-          <strong>
-            {e.trust.conditional.percent.toFixed(0)}
-            <span>%</span>
-          </strong>
-          <p>
-            trust when output
-            <br />
-            is easy to verify
-          </p>
-          <small>
-            Single-select · n = {e.trust.respondents.toLocaleString('en-US')}
-            <br />
-            Self-report ≠ observed review
-          </small>
-        </aside>
+        </section>
       </div>
       <Footer
-        section="STACK EXCHANGE INC. · 2026 · ODbL 1.0"
-        refs={['usage', 'trust']}
+        section="STACK EXCHANGE INC. · 2026 · COMMUNITY SURVEY · ODbL 1.0"
+        refs={['usage', 'review']}
       />
     </div>
   );

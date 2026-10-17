@@ -4,11 +4,11 @@ export default function System() {
   const [trace, setTrace] = useState(false);
   return (
     <div className="slide-content system-slide">
-      <Chapter number="02">ROLES / FOLLOW ONE REQUEST</Chapter>
+      <Chapter number="02">ROLES / FOLLOW THE WHOLE FEATURE</Chapter>
       <h1>
         One product.
         <br />
-        <em>Different responsibilities.</em>
+        <em>Broader ownership.</em>
       </h1>
       <div className={`system-map ${trace ? 'is-tracing' : ''}`}>
         <div className="system-node browser-node">
@@ -64,7 +64,7 @@ export default function System() {
       </div>
       <div className="system-span">
         <span>FULL-STACK · spans frontend + backend</span>
-        <span>Specialize deeply. Understand the boundaries.</span>
+        <span>AI expands your reach. You own the boundaries.</span>
       </div>
       <button
         className="action"

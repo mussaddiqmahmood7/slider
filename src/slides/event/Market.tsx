@@ -2,69 +2,57 @@ import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
 export default function Market() {
   return (
-    <div className="slide-content market-slide">
-      <Chapter number="07">DEMAND / KEEP THE DENOMINATOR</Chapter>
+    <div className="slide-content demand-slide">
+      <Chapter number="07">JOBS / SIX YEARS, WITH THE RIGHT LABEL</Chapter>
       <h1>
-        A trend needs
+        The market has jobs.
         <br />
-        <em>comparable endpoints.</em>
+        <em>Entry takes proof.</em>
       </h1>
-      <table className="era-table">
-        <caption>
-          US employment evidence · separate sources, not one growth series
-        </caption>
-        <thead>
-          <tr>
-            <th>Requested era</th>
-            <th>Verified endpoint</th>
-            <th>What changes?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>2015–2020</th>
-            <td>
-              <strong>{e.historical.employment.toLocaleString('en-US')}</strong>
-              <span>May 2020 · wage/salary jobs</span>
-            </td>
-            <td>
-              Combined developers + interface designers.
-              <br />
-              <span>2015 endpoint unavailable in this audit.</span>
-            </td>
-          </tr>
-          <tr>
-            <th>2020–2025</th>
-            <td>
-              <strong>{e.current.employment.toLocaleString('en-US')}</strong>
-              <span>2025 · total jobs</span>
-            </td>
-            <td>
-              Includes self-employment.
-              <br />
-              <span>Coverage differs; no growth rate computed.</span>
-            </td>
-          </tr>
-          <tr>
-            <th>2025–latest</th>
-            <td className="unavailable">2026: unavailable</td>
-            <td>No measured 2026 endpoint established.</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="forecast-strip">
-        <strong>+{e.forecast.percent}%</strong>
-        <p>
-          <b>
-            Separate US projection · {e.forecast.start}–{e.forecast.end}
-          </b>
-          <br />
-          Web developers + digital designers. A forecast, not a job guarantee.
-        </p>
+      <div className="demand-grid">
+        <figure className="employment-chart">
+          <figcaption>
+            US web developers + interface designers
+            <br />
+            <span>Estimated wage/salary jobs held each May</span>
+          </figcaption>
+          <div className="employment-bars">
+            {e.employment.map(({ year, jobs }) => (
+              <div className="employment-column" key={year}>
+                <strong>{jobs.toLocaleString('en-US')}</strong>
+                <div className="employment-track">
+                  <span style={{ height: `${(jobs / 200000) * 100}%` }} />
+                </div>
+                <span>
+                  {year}
+                  {year === 2020 ? '*' : ''}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p>
+            *2020 category/method break. Annual snapshots, not newly created
+            jobs; do not subtract to infer hiring.
+          </p>
+        </figure>
+        <aside className="openings-stat">
+          <span className="stat-kicker">SEPARATE US FORECAST</span>
+          <strong>13,600</strong>
+          <h2>openings / year</h2>
+          <p>
+            Average projected for 2025–35.
+            <br />
+            Includes replacement hiring.
+          </p>
+          <small>
+            No verified six-year worldwide or Pakistan web-job creation series
+            was established.
+          </small>
+        </aside>
       </div>
       <Footer
-        section="US OCCUPATIONAL EVIDENCE · NOT PAKISTAN VACANCIES"
-        refs={['history', 'outlook']}
+        section="US EVIDENCE · NO AI-CAUSATION CLAIM OR JOB GUARANTEE"
+        refs={['annualJobs', 'outlook']}
       />
     </div>
   );

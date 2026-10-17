@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
 export default function Security() {
   const [reviewed, setReviewed] = useState(false);
   return (
     <div className="slide-content security-slide">
-      <Chapter number="06">SECURITY / OWN THE CHANGE</Chapter>
+      <Chapter number="06">AI WORKFLOW / SPECIFY, IMPLEMENT, VERIFY</Chapter>
       <h1>
-        Code that runs
+        Write the rules.
         <br />
-        <em>still needs review.</em>
+        <em>Then prove them.</em>
       </h1>
       <div className="security-grid">
         <div className="code-comparison">
@@ -54,29 +53,36 @@ export default function Security() {
             Authorization decides what you may access.
           </p>
         </div>
-        <aside className="benchmark-stat">
-          <span>VENDOR BENCHMARK</span>
-          <strong>
-            {e.security.passPercentRounded}
-            <small>%</small>
-          </strong>
-          <p>security pass rate</p>
-          <small>
-            {e.security.period}
+        <aside className="spec-card">
+          <span className="stat-kicker">THE SPEC YOU MUST REVIEW</span>
+          <h2>
+            Only the owner can
             <br />
-            {e.security.tasks} tasks · {e.security.languages} languages
-            <br />
-            {e.security.weaknessClasses} weakness classes
-          </small>
+            read this record.
+          </h2>
+          <dl>
+            <div>
+              <dt>Expected</dt>
+              <dd>Owner gets their record.</dd>
+            </div>
+            <div>
+              <dt>Forbidden</dt>
+              <dd>Another user gets no record.</dd>
+            </div>
+            <div>
+              <dt>Evidence</dt>
+              <dd>Test both cases. Inspect the diff.</dd>
+            </div>
+          </dl>
         </aside>
       </div>
       <p className="review-loop">
-        Generate <span>→</span> Inspect <span>→</span> Test <span>→</span>{' '}
-        Verify
+        Specify <span>→</span> Plan <span>→</span> Small diff <span>→</span>{' '}
+        Review + test
       </p>
       <Footer
-        section="RAW-MODEL TASKS · NO SECURITY GUIDANCE · NOT A BREACH RATE"
-        refs={['security']}
+        section="ILLUSTRATIVE SPEC + PSEUDOCODE · NOT A COMPLETE SECURITY RECIPE"
+        refs={['specs']}
       />
     </div>
   );

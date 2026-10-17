@@ -57,7 +57,7 @@ test('projector layouts keep every slide and its source footer visible without e
       await page.keyboard.press('Home');
       await page.keyboard.press('g');
       const count = await page.locator('.overview-card').count();
-      expect(count).toBeLessThanOrEqual(12);
+      expect(count).toBe(11);
       await page.keyboard.press('Escape');
       await page.locator('body').click({ position: { x: 3, y: 3 } });
       for (let i = 0; i < count; i++) {
@@ -81,4 +81,28 @@ test('projector layouts keep every slide and its source footer visible without e
     }
   }
   expect(outside).toEqual([]);
+});
+
+test('closing reveal is keyboard accessible and survives theme changes', async ({
+  page,
+}) => {
+  await page.goto('/#try-the-work');
+  await expect(page.locator('.deck')).toHaveAttribute('aria-busy', 'false');
+  const reveal = page.getByRole('button', { name: 'Show what you bring' });
+  await reveal.focus();
+  await page.keyboard.press('Space');
+  await expect(page.locator('#interview-answer')).toContainText(
+    'prove it works',
+  );
+  await expect(page).toHaveURL(/#try-the-work$/);
+  await page
+    .getByRole('combobox', { name: 'Theme', exact: true })
+    .selectOption('midnight');
+  await expect(
+    page.getByRole('button', { name: 'Ask the question again' }),
+  ).toHaveAttribute('aria-expanded', 'true');
+  await expect(page.locator('.closing-resource')).toHaveAttribute(
+    'href',
+    /presentation\/comsats-sahiwal\/docs\/student-resources.md$/,
+  );
 });

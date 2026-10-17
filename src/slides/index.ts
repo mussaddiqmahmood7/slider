@@ -2,7 +2,6 @@ import Market from './event/Market';
 import Income from './event/Income';
 import Paths from './event/Paths';
 import Tradeoffs from './event/Tradeoffs';
-import Learning from './event/Learning';
 import Closing from './event/Closing';
 import Opening from './event/Opening';
 import System from './event/System';
@@ -15,57 +14,52 @@ export const slides: readonly SlideDefinition[] = [
   { id: 'intro', title: 'The web is still being built', component: Opening },
   {
     id: 'one-product',
-    title: 'One product, different responsibilities',
+    title: 'One product, broader ownership',
     component: System,
   },
   {
     id: 'foundations',
-    title: 'Learn the foundations, then choose a stack',
+    title: 'Learn concepts, look up syntax',
     component: Foundations,
   },
   {
     id: 'abstraction',
-    title: 'Abstraction changes the work',
+    title: 'The web: five overlapping waves',
     component: Abstraction,
   },
   {
     id: 'ai-in-practice',
-    title: 'Use is widespread; trust is conditional',
+    title: 'AI adoption and what developers check',
     component: Evidence,
   },
   {
     id: 'review-the-code',
-    title: 'Code that runs still needs review',
+    title: 'Specify the change, prove it works',
     component: Security,
   },
   {
     id: 'market-evidence',
-    title: 'A trend needs comparable endpoints',
+    title: 'Jobs: six annual snapshots and the outlook',
     component: Market,
   },
   {
     id: 'income-and-growth',
-    title: 'Compare the role, then the number',
+    title: 'Local pay and international offers',
     component: Income,
   },
   {
     id: 'choose-a-path',
-    title: 'Choose a path and its tradeoffs',
+    title: 'Freshers: proof you can deliver',
     component: Paths,
   },
   {
     id: 'the-work',
-    title: 'The upside is real; so is the work',
+    title: 'Four doors into paid work',
     component: Tradeoffs,
   },
   {
-    id: 'learn-with-ai',
-    title: 'Use AI and make sure you learn',
-    component: Learning,
-  },
-  {
     id: 'try-the-work',
-    title: 'Try the work — project, source and Q&A',
+    title: 'AI could build this. Why hire you?',
     component: Closing,
   },
 ];

@@ -1,47 +1,80 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import { Chapter, Footer } from './Parts';
 export default function Closing() {
+  const [revealed, setRevealed] = useState(false);
   return (
-    <div className="slide-content event-closing">
-      <Chapter number="12">YOUR NEXT STEP / QUESTIONS WELCOME</Chapter>
-      <h1>
-        Try the <em>work.</em>
-      </h1>
-      <div className="closing-grid">
-        <div>
-          <p className="closing-challenge">Build a useful campus-club site.</p>
-          <ul className="reflection-prompts">
-            <li>Enjoy building and debugging?</li>
-            <li>Ready to learn and explain decisions?</li>
-            <li>Can you change it without the answer?</li>
-          </ul>
-          <p className="resource-pointer">
-            Start small. Present what you understand.
+    <div className="slide-content future-closing">
+      <Chapter number="11">YOUR NEXT INTERVIEW / QUESTIONS WELCOME</Chapter>
+      <div className="closing-interview">
+        <div className="interview-copy">
+          <span className="stat-kicker">“AI COULD BUILD THIS.”</span>
+          <h1>
+            Why hire
             <br />
-            <code>docs/student-resources.md</code>
-          </p>
+            <em>you?</em>
+          </h1>
+          <button
+            className="action"
+            aria-expanded={revealed}
+            aria-controls="interview-answer"
+            onClick={() => setRevealed(!revealed)}
+          >
+            {revealed ? 'Ask the question again' : 'Show what you bring'}{' '}
+            <span aria-hidden="true">↗</span>
+          </button>
+          <div
+            id="interview-answer"
+            className="interview-answer"
+            aria-live="polite"
+          >
+            {revealed ? (
+              <>
+                <strong>
+                  “I can decide what to build.
+                  <br />
+                  And prove it works.”
+                </strong>
+                <p>
+                  Understand the user. Shape the spec.
+                  <br />
+                  Review the change. Own the outcome.
+                </p>
+              </>
+            ) : (
+              <>
+                <strong>The demo starts the conversation.</strong>
+                <p>
+                  Your decisions, debugging and evidence
+                  <br />
+                  show what you can contribute.
+                </p>
+              </>
+            )}
+          </div>
         </div>
         <a
-          className="repository-cta"
-          href="https://github.com/mussaddiqmahmood7/slider"
+          className="closing-resource"
+          href="https://github.com/mussaddiqmahmood7/slider/tree/presentation/comsats-sahiwal/docs/student-resources.md"
           target="_blank"
           rel="noreferrer"
         >
           <Image
-            src="/images/repository-qr.svg"
-            alt="QR code for github.com/mussaddiqmahmood7/slider"
+            src="/images/resources-qr.svg"
+            alt="QR code linking directly to the student resource handout"
             width={200}
             height={200}
           />
-          <span>THE STARTER + LEARNING HANDOUT ↗</span>
-          <strong>
-            github.com/
+          <span>YOUR FIELD GUIDE ↗</span>
+          <strong>Resources · specs · first-job steps</strong>
+          <small>
+            github.com/mussaddiqmahmood7/slider
             <br />
-            mussaddiqmahmood7/slider
-          </strong>
+            Presentation branch → docs → student-resources.md
+          </small>
         </a>
       </div>
-      <Footer section="BUILD SOMETHING USEFUL. UNDERSTAND WHAT YOU SHIP." />
+      <Footer section="BUILD WITH AI. BECOME SOMEONE PEOPLE CAN TRUST TO SHIP." />
     </div>
   );
 }
