@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = {
-  title: 'Next Slide Starter',
-  description: 'Presentations built from React components.',
+  title: 'Web Development in the AI Era · COMSATS Sahiwal',
+  description:
+    'Understanding, building and learning in the AI era. A researched student keynote.',
 };
 export default function RootLayout({
   children,

@@ -2,8 +2,8 @@ import type { LocaleDefinition } from './lib/localization';
 // To try local translations, import { exampleLocales } from '../examples/localization/locales'
 // and set enabled: true, locales: exampleLocales. No translation files are required by default.
 export const deckConfig = {
-  title: 'Next Slide Starter',
-  description: 'A small canvas for big ideas.',
+  title: 'Web Development in the AI Era',
+  description: 'COMSATS University Islamabad, Sahiwal Campus',
   language: 'en',
   direction: 'ltr' as 'ltr' | 'rtl',
   localization: {
