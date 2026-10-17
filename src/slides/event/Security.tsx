@@ -76,7 +76,7 @@ export default function Security() {
       </p>
       <Footer
         section="RAW-MODEL TASKS · NO SECURITY GUIDANCE · NOT A BREACH RATE"
-        refs={['security', 'access']}
+        refs={['security']}
       />
     </div>
   );

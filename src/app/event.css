@@ -816,3 +816,590 @@
     flex-wrap: wrap;
   }
 }
+.slide.market-slide h1,
+.slide.income-slide h1,
+.slide.paths-slide h1,
+.slide.tradeoffs-slide h1,
+.slide.learning-slide h1 {
+  font-size: 4.9cqw;
+}
+.era-table,
+.paths-table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1cqw;
+}
+.era-table caption,
+.paths-table caption {
+  text-align: left;
+  font-size: 1cqw;
+  color: var(--muted);
+  margin-bottom: 1cqw;
+}
+.era-table thead,
+.paths-table thead {
+  border-bottom: 1px solid var(--text);
+}
+.era-table thead th,
+.paths-table thead th {
+  color: var(--muted);
+  font-size: 0.9cqw;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-bottom: 0.7cqw;
+}
+.era-table tbody th {
+  font-size: 1.6cqw;
+  font-weight: 500;
+  width: 22%;
+}
+.era-table tbody tr,
+.paths-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+.era-table td,
+.era-table tbody th {
+  padding: 1cqw 1cqw 1cqw 0;
+}
+.era-table td {
+  font-size: 1.25cqw;
+  line-height: 1.55;
+}
+.era-table td strong {
+  display: block;
+  font-size: 2.3cqw;
+  letter-spacing: -0.04em;
+  font-weight: 550;
+}
+.era-table td span {
+  color: var(--muted);
+  font-size: 1cqw;
+}
+.era-table .unavailable {
+  font-size: 1.4cqw;
+  color: var(--muted);
+}
+.forecast-strip {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  margin: 0.5cqw 0;
+}
+.forecast-strip > strong {
+  font-size: 4cqw;
+  font-weight: 550;
+  color: var(--accent);
+  letter-spacing: -0.06em;
+}
+.forecast-strip p {
+  font-size: 1.1cqw;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--muted);
+}
+.forecast-strip b {
+  color: var(--text);
+  font-weight: 550;
+}
+.income-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4cqw;
+  flex: 1;
+}
+.salary-context {
+  padding-top: 1cqw;
+}
+.salary-context > strong {
+  display: block;
+  font-size: 6.7cqw;
+  font-weight: 550;
+  letter-spacing: -0.07em;
+  color: var(--accent);
+  line-height: 1.25;
+  margin: 0.7cqw 0;
+}
+.salary-context p {
+  font-size: 1.5cqw;
+  color: var(--muted);
+}
+.local-limit {
+  border-top: 1px solid var(--border);
+  padding-top: 1.3cqw;
+  font-size: 1.2cqw;
+  max-width: 90%;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.responsibility-path {
+  padding: 0 0 0 2.3cqw;
+  margin: 0;
+  border-left: 1px solid var(--border);
+  list-style: none;
+}
+.responsibility-path li {
+  display: flex;
+  gap: 1.2cqw;
+  padding: 1.2cqw 0;
+  border-bottom: 1px solid var(--border);
+}
+.responsibility-path li > span {
+  font-size: 1cqw;
+  color: var(--accent);
+  padding-top: 0.4cqw;
+}
+.responsibility-path h2 {
+  font-size: 2cqw;
+  margin-bottom: 0.6cqw;
+}
+.responsibility-path p {
+  font-size: 1.25cqw;
+  color: var(--muted);
+  margin: 0;
+}
+.paths-table th,
+.paths-table td {
+  padding: 1.5cqw 1.5cqw 1.5cqw 0;
+}
+.paths-table tbody th {
+  font-size: 1.65cqw;
+  font-weight: 550;
+  width: 25%;
+  letter-spacing: -0.025em;
+}
+.paths-table td {
+  font-size: 1.25cqw;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.paths-table tbody tr:nth-child(3) th,
+.paths-table tbody tr:nth-child(4) th {
+  color: var(--accent);
+}
+.slide .paths-takeaway {
+  font-size: 1.5cqw;
+  margin-top: 1cqw;
+}
+.balance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4cqw;
+  flex: 1;
+}
+.balance-grid section + section {
+  border-left: 1px solid var(--border);
+  padding-left: 4cqw;
+}
+.balance-symbol {
+  color: var(--accent);
+  font-size: 4cqw;
+  display: block;
+  line-height: 1.2;
+  margin-bottom: 1cqw;
+}
+.balance-grid h2 {
+  font-size: 2.5cqw;
+}
+.balance-grid ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5cqw;
+}
+.balance-grid li {
+  font-size: 1.75cqw;
+  padding: 0.6cqw 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.slide .free-start {
+  font-size: 1.25cqw;
+  margin-bottom: 1.4cqw;
+}
+.practice-loop {
+  margin-top: 2cqw;
+}
+.practice-loop ol {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5cqw;
+}
+.practice-loop li {
+  position: relative;
+}
+.practice-loop li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: 0;
+  top: 0.8cqw;
+  color: var(--accent);
+  font-size: 2cqw;
+}
+.practice-loop li > span {
+  display: grid;
+  place-items: center;
+  width: 3.6cqw;
+  height: 3.6cqw;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 1.2cqw;
+  border-radius: 50%;
+  margin-bottom: 1.6cqw;
+}
+.practice-loop li:nth-child(3) > span {
+  background: var(--accent);
+  color: var(--stage);
+}
+.practice-loop h2 {
+  font-size: 2.1cqw;
+}
+.practice-loop p {
+  font-size: 1.25cqw;
+  max-width: 95%;
+  color: var(--muted);
+}
+.loop-return {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-top: none;
+  margin: 1.5cqw 1.5cqw 0;
+  padding: 1cqw;
+  font-size: 0.9cqw;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.tutor-prompt {
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  padding: 1.5cqw 0;
+  margin: 2cqw 0 0;
+  font-size: 1.75cqw;
+  letter-spacing: -0.025em;
+}
+.tutor-prompt > span {
+  font-size: 0.9cqw;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.slide.event-closing h1 {
+  font-size: 9cqw;
+  max-width: 100%;
+  margin-bottom: 2cqw;
+}
+.closing-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4cqw;
+  flex: 1;
+}
+.slide .closing-challenge {
+  font-size: 2cqw;
+  font-weight: 500;
+}
+.reflection-prompts {
+  list-style: none;
+  padding: 0;
+  margin: 1.5cqw 0;
+}
+.reflection-prompts li {
+  font-size: 1.45cqw;
+  color: var(--muted);
+  padding: 0.5cqw 0;
+  border-bottom: 1px solid var(--border);
+}
+.slide .resource-pointer {
+  font-size: 1.3cqw;
+  line-height: 1.8;
+}
+.resource-pointer code {
+  font-size: 1.1cqw;
+  color: var(--accent);
+}
+.repository-cta {
+  align-self: start;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7cqw;
+  text-decoration: none;
+}
+.repository-cta img {
+  width: 12cqw;
+  height: 12cqw;
+  background: white;
+  image-rendering: pixelated;
+}
+.repository-cta > span {
+  font-size: 0.8cqw;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+.repository-cta > strong {
+  font-size: 1.5cqw;
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 700px), (max-height: 520px) {
+  .slide.market-slide h1,
+  .slide.income-slide h1,
+  .slide.paths-slide h1,
+  .slide.tradeoffs-slide h1,
+  .slide.learning-slide h1 {
+    font-size: 9cqw;
+  }
+  .era-table,
+  .paths-table,
+  .era-table tbody,
+  .paths-table tbody,
+  .era-table tr,
+  .paths-table tr {
+    display: block;
+  }
+  .era-table thead,
+  .paths-table thead {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .era-table caption,
+  .paths-table caption {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .era-table tbody th,
+  .era-table td,
+  .paths-table tbody th,
+  .paths-table td {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 6px 0;
+    font-size: 17px;
+  }
+  .era-table tr,
+  .paths-table tr {
+    padding: 14px 0;
+  }
+  .era-table tbody th,
+  .paths-table tbody th {
+    font-size: 24px;
+  }
+  .era-table td strong {
+    font-size: 30px;
+  }
+  .era-table td span {
+    font-size: 13px;
+  }
+  .era-table .unavailable {
+    font-size: 18px;
+  }
+  .forecast-strip {
+    align-items: flex-start;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .forecast-strip > strong {
+    font-size: 46px;
+  }
+  .forecast-strip p {
+    font-size: 14px;
+  }
+  .income-grid,
+  .balance-grid,
+  .closing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .salary-context > strong {
+    font-size: 16cqw;
+  }
+  .salary-context p {
+    font-size: 18px;
+  }
+  .local-limit {
+    font-size: 16px;
+    padding-top: 18px;
+    max-width: 100%;
+  }
+  .responsibility-path {
+    padding-left: 20px;
+  }
+  .responsibility-path li {
+    padding: 18px 0;
+    gap: 16px;
+  }
+  .responsibility-path li > span {
+    font-size: 12px;
+  }
+  .responsibility-path h2 {
+    font-size: 24px;
+  }
+  .responsibility-path p {
+    font-size: 17px;
+  }
+  .slide .paths-takeaway {
+    font-size: 19px;
+  }
+  .balance-grid section + section {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding: 20px 0 0;
+  }
+  .balance-symbol {
+    font-size: 40px;
+  }
+  .balance-grid h2 {
+    font-size: 28px;
+  }
+  .balance-grid li {
+    font-size: 19px;
+    padding: 14px 0;
+  }
+  .slide .free-start {
+    font-size: 17px;
+    margin-block: 16px;
+  }
+  .practice-loop ol {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .practice-loop li {
+    padding-left: 64px;
+  }
+  .practice-loop li > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+  }
+  .practice-loop h2 {
+    font-size: 25px;
+  }
+  .practice-loop p {
+    font-size: 17px;
+  }
+  .practice-loop li:not(:last-child)::after {
+    content: '';
+  }
+  .loop-return {
+    padding: 14px;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  .tutor-prompt {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 22px;
+    gap: 12px;
+    margin-block: 20px;
+  }
+  .tutor-prompt > span {
+    font-size: 11px;
+  }
+  .slide.event-closing h1 {
+    font-size: 15cqw;
+  }
+  .slide .closing-challenge {
+    font-size: 25px;
+  }
+  .reflection-prompts li {
+    font-size: 17px;
+    padding: 14px 0;
+  }
+  .slide .resource-pointer {
+    font-size: 17px;
+  }
+  .resource-pointer code {
+    font-size: 13px;
+  }
+  .repository-cta {
+    justify-self: start;
+    margin-block: 12px 24px;
+    gap: 12px;
+  }
+  .repository-cta img {
+    width: 180px;
+    height: 180px;
+  }
+  .repository-cta > span {
+    font-size: 10px;
+  }
+  .repository-cta > strong {
+    font-size: 19px;
+  }
+}
+
+/* Final stage sizing: explicit hierarchy, with room for readable source footers. */
+.slide .eyebrow {
+  font-size: clamp(12px, 1.12cqw, 20px);
+}
+.request-bridge span {
+  font-size: 1.05cqw;
+}
+.system-node p {
+  font-size: 1.6cqw;
+}
+.forecast-strip p {
+  font-size: 1.4cqw;
+}
+.paths-table th,
+.paths-table td {
+  padding-block: 1.1cqw;
+}
+.paths-table td {
+  font-size: 1.45cqw;
+}
+.repository-cta img {
+  width: 16cqw;
+  height: 16cqw;
+}
+@media (max-width: 700px), (max-height: 520px) {
+  .request-bridge span {
+    font-size: 12px;
+  }
+  .system-node p {
+    font-size: 18px;
+  }
+  .forecast-strip p {
+    font-size: 15px;
+  }
+  .paths-table th,
+  .paths-table td {
+    padding-block: 6px;
+  }
+  .paths-table td {
+    font-size: 17px;
+  }
+  .repository-cta img {
+    width: 190px;
+    height: 190px;
+  }
+}
+@media (min-width: 701px) and (min-height: 521px) {
+  .slide.market-slide h1 {
+    font-size: 4.5cqw;
+  }
+  .era-table td,
+  .era-table tbody th {
+    padding-block: 0.8cqw;
+  }
+  .forecast-strip > strong {
+    line-height: 1;
+  }
+}
+
+@media (min-width: 701px) and (min-height: 521px) and (max-height: 650px) {
+  .slide.security-slide .review-loop {
+    margin-top: 0.8cqw;
+  }
+}

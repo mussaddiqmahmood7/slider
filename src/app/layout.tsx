@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './event.css';
 export const metadata: Metadata = {
   title: 'Web Development in the AI Era · COMSATS Sahiwal',
   description:
