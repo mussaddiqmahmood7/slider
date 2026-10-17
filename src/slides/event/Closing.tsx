@@ -54,36 +54,63 @@ export default function Closing() {
             )}
           </div>
           <div className="challenge-strip">
-            <span className="stat-kicker">YOUR NEXT REVIEW:</span>
+            <span className="stat-kicker">7-DAY CHALLENGE:</span>
             <p>
-              Write the spec. Test a success and a forbidden case. Explain one
-              decision you made before shipping.
+              Pick a real problem → one-page spec → direct AI → document 3 bugs
+              it made → deploy.
             </p>
           </div>
         </div>
-        <a
-          className="closing-resource"
-          href="https://github.com/mussaddiqmahmood7/slider/tree/presentation/comsats-sahiwal/docs/student-resources.md"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src="/images/resources-qr.svg"
-            alt="QR code linking directly to the student resource handout"
-            width={180}
-            height={180}
-          />
-          <span>YOUR FIELD GUIDE ↗</span>
-          <strong>Handout · specs · starter repo</strong>
-          <small>
-            github.com/mussaddiqmahmood7/slider
-            <br />
-            docs/student-resources.md
-          </small>
-        </a>
+        <div className="closing-sidebar">
+          <div className="career-reflection" aria-label="Career reflection">
+            <span className="stat-kicker">
+              IS WEB DEVELOPMENT RIGHT FOR YOU?
+            </span>
+            {[
+              'Enjoy solving problems with no obvious answer?',
+              'Curious how apps actually work?',
+              'Patient with debugging and learning?',
+            ].map((prompt, i) => (
+              <fieldset key={prompt}>
+                <legend>{prompt}</legend>
+                <div className="reflection-answers">
+                  <label>
+                    <input type="radio" name={`reflection-${i}`} value="yes" />{' '}
+                    Yes
+                  </label>
+                  <label>
+                    <input type="radio" name={`reflection-${i}`} value="no" />{' '}
+                    No
+                  </label>
+                </div>
+              </fieldset>
+            ))}
+            <p>Try one small project before deciding.</p>
+          </div>
+          <a
+            className="closing-resource"
+            href="https://github.com/mussaddiqmahmood7/slider/blob/presentation/comsats-sahiwal/docs/student-resources.md"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Image
+              src="/images/resources-qr.svg"
+              alt="QR code linking directly to the student resource handout"
+              width={180}
+              height={180}
+            />
+            <span>YOUR FIELD GUIDE ↗</span>
+            <strong>Handout · specs · starter repo</strong>
+            <small>
+              github.com/mussaddiqmahmood7/slider
+              <br />
+              docs/student-resources.md
+            </small>
+          </a>
+        </div>
       </div>
 
-      <Footer refs={['specs', 'reviewPractice', 'anthropic']} />
+      <Footer refs={['specs', 'reviewPractice']} />
     </div>
   );
 }

@@ -10,7 +10,9 @@ Every slide has the same footer identity and **Sources** button. Open it for exa
 
 Ask whether students have generated a page with AI. Follow the booking example: two students want the last seat; one student must not read another’s records; a payment can succeed while another step fails. The prototype is illustrative, not a measured 15-second task. Define web development as connecting a user need to a usable, maintained experience. AI can help throughout; responsibility is broader than typing.
 
-Cue: “Code mil jana aur system ki zimmedari lena alag cheezen hain.” Transition: follow the whole feature. Sources: BLS role descriptions and Google/DORA’s original 2025 research summary; framing is speaker synthesis.
+Say: “You don’t need all of this on day one. Start with one small project.”
+
+Cue: “Code mil jana aur system ki zimmedari lena alag cheezen hain.” Transition: follow the whole feature. Sources: Google/DORA’s original 2025 research summary; framing is speaker synthesis.
 
 ## 2 · A website is more than what you see — 2½ minutes
 
@@ -18,7 +20,7 @@ Cue: “Code mil jana aur system ki zimmedari lena alag cheezen hain.” Transit
 
 Use the booking-trace button. Frontend displays state and errors; application validates identity, permission and rules; database/transaction design helps enforce capacity and consistency. Explain frontend, backend and full-stack. A static page does not automatically need a backend; this diagram illustrates a shared booking service.
 
-Do not promise zero data loss. Transactions, constraints, backups, retries and recovery each have assumptions. AI expands reach, while specialists and teammates remain valuable. Ask where the “only one last seat” rule belongs. Sources: BLS, OWASP; teaching diagram.
+Do not promise zero data loss. Transactions, constraints, backups, retries and recovery each have assumptions. AI expands reach, while specialists and teammates remain valuable. Ask where the “only one last seat” rule belongs. Sources: OWASP; teaching diagram.
 
 ## 3 · Learn the concepts. Syntax will change. — 3 minutes
 
@@ -28,13 +30,15 @@ Yes, HTML is useful: semantics, native controls, labels and accessibility explai
 
 When moving from JavaScript to another stack, verify APIs, runtime behavior and dependency conventions. No “days not years” promise. Use AI to clarify concepts, predict behavior, request a small change, inspect it, test it and explain it independently. Follow course rules for assessment.
 
-Evidence depth: the original Trio-learning experiment measured immediate comprehension in 52 prior Python users; Microsoft/CHI surveyed perceived oversight effort across knowledge work. Neither establishes permanent skill loss or a guaranteed tutoring method. Sources in panel: MDN, original paper, Microsoft Research. Transition: see how tools change the level at which we work.
+The starter row is a menu: choose one backend and one database, not all of them. Frontend choices assume learning HTML, CSS and JavaScript first. Sources in panel: MDN. Transition: see how tools change the level at which we work.
 
 ## 4 · Tools raise the abstraction. Judgment stays with you. — 2½ minutes
 
 **Takeaway:** Reuse reduces manual work; design and verification remain.
 
 The waves overlap: markup → utility/plugin ecosystem → UI composition → application frameworks → directing AI from specifications. The labels describe broad eras, not release dates or replacement. jQuery began in 2006 and Next.js in 2016. React is a UI library; Bootstrap/Tailwind are CSS/UI tooling. Frameworks still depend on libraries and web standards; a small static site may need only those standards.
+
+Doctor/mechanic contrast: a doctor understands clinic appointments; a mechanic understands workshop bookings. Both can explain the problem and learn software development. Domain expertise helps define the need; it does not by itself establish that generated software is correct. Software understanding and verification still matter.
 
 Explain GitHub’s documented workflow: specify intent, plan the technical approach, break it into changes, implement and verify. The agent can draft a spec; a developer reviews it too. Domain experts explain their problem, while software competence is needed to turn requirements into a reliable system. People from other professions can develop that competence. Sources: project histories, GitHub announcement. No universal adoption or productivity claim.
 
@@ -62,13 +66,13 @@ The Veracode banner refers to raw-model tasks without security guidance: roughly
 
 The chart shows selected daily US software-posting index snapshots, with exact dates beneath the years. Jan 1 points are not annual averages; the 2026 point is October 9. A value of 100 is the February 1, 2020 baseline. Do not call the sampled 2022 point the peak or infer causes from the line of bars. Historical data can be revised.
 
-The 71% inset is the share of the net increase attributed to senior titles in May 2025–May 2026, not all demand. This original Indeed report has a different observation window. Broader US software postings and BLS’s combined web occupations are also different populations. The separate openings forecast includes replacements. No annual global/Pakistan web-job creation series was established, and neither source guarantees junior entry. Practical response: show work someone can inspect. Sources: FRED original table, Indeed original analysis, BLS.
+The 71% inset is the share of the net increase attributed to senior titles in May 2025–May 2026, not all demand. This original Indeed report has a different observation window. Broader US software postings and BLS’s combined web occupations are also different populations. The separate openings forecast includes replacements. Say explicitly: “This chart is US data. No comparable Pakistan jobs series was found in our research.” No annual global/Pakistan web-job creation series was established, and neither source guarantees junior entry. Practical response: show work someone can inspect. Sources: FRED original table, Indeed original analysis, BLS.
 
 ## 8 · What can web developers actually earn? — 3 minutes
 
 **Takeaway:** Compare an actual role and terms, not a converted foreign headline.
 
-The three cards intentionally have different labels. The Pakistan junior-frontend anchor is a small platform estimate, the foreign-remote figure is one employer’s advertised range for a role with two years listed experience, and the US benchmark covers all experience levels/work arrangements. This is not an experience ladder or matched remote/on-site comparison. Sources records supply sample, date, currency and period; never assign the US median to “mid-level.”
+The Pakistan junior card is the main local anchor; the smaller remote card is one example, and the US median is another country’s context. Stage figures use ordinary nearest rounding, never ceiling rounding: PKR to 5,000 and USD to 1,000, giving about PKR 50k/month, about PKR 80–180k/month and about $93k/year. Exact figures, dates and available sample details stay in Sources and evidence.ts. What moves pay: experience, ownership, market, communication. The Pakistan junior-frontend anchor is a small platform estimate, the foreign-remote figure is one employer’s advertised range for a role with two years listed experience, and the US benchmark covers all experience levels/work arrangements. This is not an experience ladder or matched remote/on-site comparison. Sources records supply sample, date, currency and period; never assign the US median to “mid-level.”
 
 GitLab’s local-market policy and Automattic’s global band show policy variation, not a universal remote discount. Ask about gross/net, base/benefits, employment/contract, currency, taxes, hours, equipment, leave, payment and relocation/work authorization. No forecast of an individual’s future salary. Current P@SHA pay tables remain unavailable; no fabricated ranges. Career growth means increasing scope and reliability, not an automatic raise after a fixed number of years.
 
@@ -78,7 +82,7 @@ GitLab’s local-market policy and Automattic’s global band show policy variat
 
 The booking example should have a real user, a documented rule, a success path, forbidden cases and understandable limits. Start small. Simulate shared data honestly if it is only a prototype; use server/database enforcement when implementing a real multi-user service. Show the demo, README, meaningful commits, one design tradeoff and relevant tests. Explain how you used AI and verified its changes.
 
-Apply while improving, seek a peer/alumni review, tailor the application and practice tracing/fixing a bug. This advice is not a measured hiring formula or guarantee. Ask about review and support in a junior role. Sources: Google review practice and original learning paper. Transition: choose the next responsibility you can sustain.
+Apply while improving, seek a peer/alumni review, tailor the application and practice tracing/fixing a bug. This advice is not a measured hiring formula or guarantee. Ask about review and support in a junior role. Sources: Google review practice. Transition: choose the next responsibility you can sustain.
 
 ## 10 · Four ways to build your career — 2½ minutes
 
@@ -86,12 +90,12 @@ Apply while improving, seek a peer/alumni review, tailor the application and pra
 
 Local team: ask about mentorship and review; do not assume it exists. Remote team: demonstrate written updates and handoff; pay/support vary by employer. Freelance: agree scope, milestones, acceptance, payment and handover; client acquisition is work. Product: talk to users before building and test demand; support/distribution/revenue are your responsibilities too. Ownership may be shared; do not promise 100% equity.
 
-Each card offers one concrete action, as practical advice. Grow from a task to a feature to wider system ownership; specialization and teamwork remain useful. Keep learning and scope sustainable. Sources: pay policies and Google engineering practice. Pakistan export receipts are removed because original report retrieval was blocked; exports would not establish junior hiring anyway.
+Each card offers a beginner action: show a small demo in an interview; fix an open-source bug or docs page; offer a shop a booking form; ask users about a recurring problem. The experience-based pros/cons strip is speaker advice, with no statistical claim. “Work from anywhere” describes a possible route, not a guarantee for every job. Grow from a task to a feature to wider system ownership; specialization and teamwork remain useful. Keep learning and scope sustainable. Sources: Google engineering practice. Pakistan export receipts are removed because original report retrieval was blocked; exports would not establish junior hiring anyway.
 
 ## 11 · If AI can code, why should anyone hire you? — 2 minutes + Q&A
 
 **Takeaway:** Explain the decisions and verification behind the demo.
 
-Pause on the question and invite an answer. Reveal the response: “I decide what to build, and I prove it works.” This is the speaker’s thesis, not an employer quote or formal correctness proof. AI can assist with research, debugging and review; humans/teams remain accountable for accepting and operating the change.
+Say: “You don’t need all of this on day one. Start with one small project.” Invite yes/no reflection about problem solving, curiosity about apps, and patience with debugging and learning. This is reflection, not a scored career test. Try one small project before deciding. Then pause on the interview question and invite an answer. Reveal the response: “I decide what to build, and I prove it works.” This is the speaker’s thesis, not an employer quote or formal correctness proof. AI can assist with research, debugging and review; humans/teams remain accountable for accepting and operating the change.
 
-The next review: write a spec, test one success and one forbidden case, explain a design decision. Do not require exactly three AI bugs; test the requirement rather than manufacturing a quota. The QR opens the handout on the presentation branch; main remains the reusable starter. Invite questions. Sources: GitHub process, Google review guidance, Anthropic’s explanation of the same original learning study.
+The 7-day challenge: pick a real problem, write a one-page spec, direct AI, document 3 bugs it made, deploy. Keep the project small; document real bugs and how you verified the fixes. The QR opens the handout on the presentation branch; main remains the reusable starter. Invite questions. Sources: GitHub process and Google review guidance.

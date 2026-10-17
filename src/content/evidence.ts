@@ -173,6 +173,8 @@ export const evidence = {
     period: '2025–2035',
     annualOpenings: 13600,
     medianSalaryUsd: 92650,
+    wageDate: 'May 2025',
   },
   localSalary: { mean: 47526, reports: 20, updated: '8 July 2026' },
+  remoteSalary: { min: 80000, max: 180000, advertised: '28 August 2026' },
 } as const;

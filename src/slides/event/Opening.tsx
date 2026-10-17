@@ -71,7 +71,7 @@ export default function Opening() {
           </div>
         </div>
       </div>
-      <Footer refs={['dora', 'outlook']} />
+      <Footer refs={['dora']} />
     </div>
   );
 }

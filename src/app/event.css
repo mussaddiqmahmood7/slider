@@ -352,20 +352,43 @@
 .system-span span:first-child {
   color: var(--accent);
 }
+/* Added career guidance keeps projector body copy at least 26px at 1920×1080. */
+.concepts-slide,
+.pay-slide,
+.route-slide,
+.future-closing {
+  --body-size: clamp(16px, 1.55cqw, 28px);
+  --small-size: clamp(12px, 1.1cqw, 20px);
+  padding-top: 2.6cqw;
+}
+.slide
+  .slide-content:is(.concepts-slide, .pay-slide, .route-slide, .future-closing)
+  .eyebrow {
+  font-size: var(--small-size);
+}
+.slide-content:is(.concepts-slide, .pay-slide, .route-slide, .future-closing)
+  .event-footer,
+.slide-content:is(.concepts-slide, .pay-slide, .route-slide, .future-closing)
+  .sources-trigger {
+  font-size: var(--small-size);
+}
 /* Concepts and overlapping waves. */
 .concepts-grid {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 4cqw;
+  gap: 3cqw;
 }
 .concept-ledger > div {
   border-bottom: 1px solid var(--border);
-  padding: 0.75cqw 0;
+  padding: 0.4cqw 0;
+}
+.slide .concepts-slide h1 {
+  margin-bottom: 1cqw;
 }
 .concept-ledger strong {
   display: block;
   font-size: 1.8cqw;
-  line-height: 1.3;
+  line-height: 1.2;
   font-weight: 550;
 }
 .concept-ledger span {
@@ -373,7 +396,7 @@
   font-size: var(--body-size);
   color: var(--muted);
   margin-top: 0.2cqw;
-  line-height: 1.35;
+  line-height: 1.25;
 }
 .concept-answer {
   padding-left: 2cqw;
@@ -387,10 +410,33 @@
   color: var(--muted);
   margin: 1cqw 0;
 }
-.slide .revision-takeaway {
+.slide .concepts-slide .revision-takeaway {
   color: var(--muted);
   font-size: var(--small-size);
-  margin: 1cqw 0;
+  margin: 0.4cqw 0 0.7cqw;
+}
+.starter-stack {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 0.9fr 1fr;
+  gap: 1.2cqw;
+  border-top: 1px solid var(--accent);
+  margin-top: 1cqw;
+  padding-top: 0.7cqw;
+}
+.starter-stack strong,
+.starter-stack span {
+  display: block;
+  font-size: var(--body-size);
+  line-height: 1.35;
+}
+.starter-stack strong {
+  color: var(--accent);
+  margin-bottom: 0.25cqw;
+}
+.slide .concepts-slide .stack-caption {
+  font-size: var(--small-size);
+  color: var(--muted);
+  margin: 0.5cqw 0 0;
 }
 .web-waves {
   list-style: none;
@@ -696,32 +742,49 @@
 }
 .pay-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2cqw;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1.4cqw;
+  align-items: stretch;
 }
 .pay-cards section {
   display: flex;
   flex-direction: column;
   min-width: 0;
   border-top: 2px solid var(--accent);
-  padding-top: 0.8cqw;
+  padding: 1cqw 0.6cqw;
+}
+.pay-cards .pay-primary {
+  background: var(--accent-soft);
+  padding-inline: 1.3cqw;
 }
 .pay-cards .stat-kicker {
-  min-height: 3cqw;
+  min-height: 3.2cqw;
 }
-.pay-cards strong {
-  font-size: 2.9cqw;
+.pay-cards section > strong {
+  display: block;
+  font-size: 2.7cqw;
   font-weight: 500;
   color: var(--accent);
   letter-spacing: -0.05em;
-  margin: 0.7cqw 0;
+  margin: 0.5cqw 0 0.8cqw;
+  line-height: 1.1;
+}
+.pay-cards .pay-primary > strong {
+  font-size: 4cqw;
+}
+.pay-cards .pay-about {
+  display: block;
+  font-size: var(--small-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: 0.3cqw;
 }
 .slide .pay-cards h2 {
-  font-size: 1.6cqw;
+  font-size: 1.65cqw;
   font-weight: 500;
 }
 .slide .pay-cards p {
-  font-size: 1.3cqw;
+  font-size: var(--body-size);
   margin: 0.7cqw 0;
 }
 .pay-cards small {
@@ -732,9 +795,13 @@
 .pay-policy {
   font-size: var(--body-size);
   line-height: 1.4;
-  background: var(--accent-soft);
-  padding: 0.9cqw 1cqw;
-  margin: 1.5cqw 0 1cqw;
+  background: var(--surface);
+  padding: 0.8cqw 1cqw;
+  margin: 1.2cqw 0 0.7cqw;
+}
+.slide .pay-factors {
+  font-size: var(--body-size);
+  margin: 0 0 0.8cqw;
 }
 /* A reviewable portfolio and four practical routes. */
 .first-job-grid {
@@ -805,10 +872,10 @@
 .route-rows section {
   display: flex;
   flex-direction: column;
-  gap: 0.5cqw;
+  gap: 0.4cqw;
   border: 1px solid var(--border);
   background: var(--surface);
-  padding: 0.9cqw 1cqw;
+  padding: 0.8cqw 1cqw;
   min-width: 0;
 }
 .route-row-header {
@@ -833,9 +900,33 @@
 }
 .slide .route-rows p,
 .route-action {
-  font-size: clamp(13px, 1.15cqw, 21px);
+  font-size: var(--body-size);
   line-height: 1.35;
   margin: 0;
+}
+.career-balance {
+  background: var(--accent-soft);
+  padding: 0.6cqw 1cqw;
+  margin: 0.8cqw 0;
+}
+.career-balance-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2cqw;
+  margin-top: 0.35cqw;
+}
+.career-balance-columns strong {
+  color: var(--accent);
+  font-size: var(--body-size);
+}
+.career-balance ul {
+  list-style: none;
+  margin: 0.2cqw 0 0;
+  padding: 0;
+}
+.slide .career-balance li {
+  font-size: var(--body-size);
+  line-height: 1.35;
 }
 .route-tradeoff {
   display: flex;
@@ -849,12 +940,12 @@
 /* Closing: question, reveal and direct handout. */
 .closing-interview {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 3cqw;
   flex: 1;
 }
 .slide .future-closing h1 {
-  font-size: 6.5cqw;
+  font-size: 5.7cqw;
   line-height: 1;
   margin: 1cqw 0 1.2cqw;
 }
@@ -879,40 +970,77 @@
   margin: 0.8cqw 0;
 }
 .slide .challenge-strip p {
-  font-size: var(--small-size);
+  font-size: var(--body-size);
   margin: 0.3cqw 0 0;
   line-height: 1.4;
 }
-.closing-resource {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+.closing-sidebar {
   border-left: 1px solid var(--border);
-  padding-left: 2.5cqw;
+  padding-left: 2cqw;
+}
+.career-reflection fieldset {
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 0.5cqw;
+  margin: 0.65cqw 0;
+  min-width: 0;
+}
+.career-reflection legend {
+  font-size: var(--body-size);
+  line-height: 1.3;
+  padding: 0;
+}
+.reflection-answers {
+  display: flex;
+  gap: 1.2cqw;
+  margin-top: 0.25cqw;
+}
+.reflection-answers label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35cqw;
+  font-size: var(--small-size);
+  cursor: pointer;
+  min-height: 28px;
+}
+.reflection-answers input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+.slide .career-reflection > p {
+  font-size: var(--body-size);
+  margin: 0.7cqw 0 1cqw;
+}
+.closing-resource {
+  display: grid;
+  grid-template-columns: 12cqw 1fr;
+  column-gap: 1cqw;
+  align-content: center;
   color: var(--text);
   text-decoration: none;
 }
 .closing-resource img {
-  width: 15cqw;
+  grid-row: 1/4;
+  width: 12cqw;
   height: auto;
   background: white;
-  margin-bottom: 1.3cqw;
 }
 .closing-resource > span {
   color: var(--accent);
   font-size: var(--small-size);
-  margin-bottom: 0.7cqw;
+  margin-bottom: 0.4cqw;
 }
 .closing-resource > strong {
-  font-size: 1.8cqw;
+  font-size: var(--body-size);
   font-weight: 500;
 }
 .closing-resource > small {
   color: var(--muted);
   font-size: var(--small-size);
-  line-height: 1.5;
-  margin-top: 0.7cqw;
+  line-height: 1.4;
+  margin-top: 0.4cqw;
   overflow-wrap: anywhere;
 }
 /* Reading mode is intentional: tablet/phone content reflows instead of shrinking.
@@ -1078,7 +1206,7 @@
   .slide .concept-answer p {
     margin: 16px 0;
   }
-  .slide .revision-takeaway {
+  .slide .concepts-slide .revision-takeaway {
     margin: 20px 0;
   }
   .web-waves {
@@ -1491,5 +1619,87 @@
   }
   .employment-bars {
     gap: 3px;
+  }
+}
+
+@media (max-width: 1100px), (max-height: 650px) {
+  .starter-stack {
+    margin-top: 24px;
+    padding-top: 18px;
+    gap: 20px;
+  }
+  .slide .concepts-slide .stack-caption {
+    margin-top: 12px;
+  }
+  .pay-cards section > strong,
+  .pay-cards .pay-primary > strong {
+    font-size: 38px;
+  }
+  .slide .pay-cards h2 {
+    font-size: 20px;
+  }
+  .pay-cards .pay-about {
+    font-size: 14px;
+  }
+  .slide .pay-factors {
+    margin-bottom: 24px;
+  }
+  .career-balance {
+    padding: 20px;
+    margin: 24px 0;
+  }
+  .career-balance-columns {
+    gap: 20px;
+    margin-top: 12px;
+  }
+  .closing-sidebar {
+    padding-left: 24px;
+  }
+  .career-reflection fieldset {
+    margin: 16px 0;
+    padding-bottom: 12px;
+  }
+  .reflection-answers {
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .reflection-answers label {
+    gap: 8px;
+    min-height: 32px;
+  }
+  .slide .career-reflection > p {
+    margin: 20px 0;
+  }
+  .closing-resource {
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 10px 16px;
+    padding-left: 0;
+    margin-top: 24px;
+  }
+  .closing-resource img {
+    width: 130px;
+    margin: 0;
+  }
+}
+@media (max-width: 800px) {
+  .starter-stack {
+    grid-template-columns: 1fr 1fr;
+  }
+  .closing-sidebar {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}
+@media (max-width: 420px) {
+  .starter-stack,
+  .career-balance-columns {
+    grid-template-columns: 1fr;
+  }
+  .closing-resource {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+  .closing-resource img {
+    width: 100px;
   }
 }

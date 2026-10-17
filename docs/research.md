@@ -16,8 +16,8 @@ Checked **17 October 2026**. This is the current ledger for the 11-slide deck. S
 
 | Slides | Purpose                                                      | Primary basis                                                              | Interpretation                                                                                    |
 | ------ | ------------------------------------------------------------ | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 1–2    | User outcomes, system boundaries and delivery responsibility | BLS role descriptions, Google/DORA, OWASP                                  | Teaching synthesis; not a claim that every site needs a backend or one person replaces a team     |
-| 3      | Concepts, code reading and learning with AI                  | MDN, Shen/Tamkin original paper, Microsoft Research/CHI study              | Advice informed by bounded studies, not a guaranteed learning-speed formula                       |
+| 1–2    | User outcomes, system boundaries and delivery responsibility | Google/DORA, OWASP                                                         | Teaching synthesis; not a claim that every site needs a backend or one person replaces a team     |
+| 3      | Concepts, code reading and learning with AI                  | MDN official curriculum                                                    | Concepts and example technology choices, not a guaranteed hiring formula                          |
 | 4      | Overlapping abstraction waves and specifications             | Original jQuery/Next.js history; GitHub Spec Kit announcement              | Project history and company workflow, not a replacement chronology or universal SDD adoption      |
 | 5      | Adoption, trust and checking                                 | Three separate Stack Overflow 2026 questions                               | Self-report, distinct populations and response formats                                            |
 | 6      | Security review and acceptance criteria                      | Original Veracode report; OWASP; Google code-review guidance               | Benchmark result plus illustrative pseudocode; not a breach rate or production recipe             |
@@ -65,7 +65,7 @@ Only a small attributed excerpt is included. Check the original series notes and
 
 ## Pay — slide 8
 
-[Indeed’s original Pakistan junior-frontend page](https://pk.indeed.com/career/junior-front-end-developer/salaries) was rechecked: **PKR 47,526/month mean base**, **20 salaries**, updated July 8, 2026; FAQ describes past-36-month postings. The stage rounds to **48k**. This live estimate differs from an earlier inspected snapshot (47,282 / 21); the new inspection supersedes that value. Small platform sample; no national or on-site-only inference.
+[Indeed’s original Pakistan junior-frontend page](https://pk.indeed.com/career/junior-front-end-developer/salaries) was rechecked: **PKR 47,526/month mean base**, **20 salaries**, updated July 8, 2026; FAQ describes past-36-month postings. The stage rounds to **about PKR 50k**, using ordinary nearest-5,000 rounding. This live estimate differs from an earlier inspected snapshot (47,282 / 21); the new inspection supersedes that value. Small platform sample; no national or on-site-only inference.
 
 [Digital Cash Cowboy’s employer-authored advert](https://www.mustakbil.com/jobs/job/1434430), August 28, 2026, explicitly states **PKR 80–180k/month** for the full-time remote option, Vancouver overlap, two years’ listed experience. It is one advertised opportunity, not paid-earnings evidence or a remote-market band. Project fees are separate. It supplies concrete context without pretending a sample of 15–20 ads per level was completed.
 

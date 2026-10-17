@@ -66,7 +66,7 @@ export default function Paths() {
         Junior competition is real and continuous learning never stops. Show
         inspectable work alongside a clear, targeted application.
       </p>
-      <Footer refs={['reviewPractice', 'learning']} />
+      <Footer refs={['reviewPractice']} />
     </div>
   );
 }

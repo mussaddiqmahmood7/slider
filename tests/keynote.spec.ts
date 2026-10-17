@@ -95,6 +95,15 @@ test('closing reveal is keyboard accessible and survives theme changes', async (
 }) => {
   await page.goto('/#try-the-work');
   await expect(page.locator('.deck')).toHaveAttribute('aria-busy', 'false');
+  const reflection = page.getByRole('group', {
+    name: 'Enjoy solving problems with no obvious answer?',
+  });
+  await reflection.getByRole('radio', { name: 'Yes', exact: true }).check();
+  await page.keyboard.press('ArrowRight');
+  await expect(
+    reflection.getByRole('radio', { name: 'No', exact: true }),
+  ).toBeChecked();
+  await expect(page).toHaveURL(/#try-the-work$/);
   const reveal = page.getByRole('button', { name: 'Show what you bring' });
   await reveal.focus();
   await page.keyboard.press('Space');
@@ -105,6 +114,9 @@ test('closing reveal is keyboard accessible and survives theme changes', async (
   await page
     .getByRole('combobox', { name: 'Theme', exact: true })
     .selectOption('midnight');
+  await expect(
+    reflection.getByRole('radio', { name: 'No', exact: true }),
+  ).toBeChecked();
   await expect(
     page.getByRole('button', { name: 'Ask the question again' }),
   ).toHaveAttribute('aria-expanded', 'true');
@@ -176,7 +188,7 @@ test('tablet and phone reading layouts keep body text readable and every source 
           const size = parseFloat(getComputedStyle(node).fontSize);
           const detail =
             node.matches(
-              'small,dt,.stat-kicker,.footer-identity,.speaker-badge,.diagram-caption,.employment-chart > p',
+              'small,dt,.stat-kicker,.footer-identity,.speaker-badge,.diagram-caption,.employment-chart > p,.eyebrow,.stack-caption',
             ) ||
             node.closest('.employment-column') ||
             node.classList.contains('code-lesson') ||

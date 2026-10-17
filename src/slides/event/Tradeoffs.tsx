@@ -5,34 +5,26 @@ export default function Tradeoffs() {
     {
       name: 'Local team',
       scope: 'Software houses · on-site / hybrid',
-      tradeoff:
-        'Look for review and mentorship; pay and support vary by employer.',
-      action:
-        'Ship one complete CRUD app with auth and walk into an interview with a live demo.',
+      tradeoff: 'Ask about mentorship, review and pay.',
+      action: 'Show a small live demo in an interview.',
     },
     {
       name: 'Remote team',
       scope: 'Global startups · async distributed',
-      tradeoff:
-        'Clear written communication and reliable delivery; pay follows employer policy.',
-      action:
-        'Record a 2-minute Loom walkthrough explaining an architectural decision and commit clean PRs.',
+      tradeoff: 'Write clear updates and deliver reliably.',
+      action: 'Fix an open-source bug or docs page.',
     },
     {
       name: 'Freelance',
       scope: 'Contract delivery · direct clients',
-      tradeoff:
-        'Irregular client pipeline and sales overhead vs early independence and market feedback.',
-      action:
-        'Package one specific outcome ("I fix Next.js page latency & Stripe webhooks") instead of "full-stack dev".',
+      tradeoff: 'Find clients, agree scope and manage payment.',
+      action: 'Offer one local shop a simple booking form.',
     },
     {
       name: 'Own product',
       scope: 'Micro-SaaS · niche tools',
-      tradeoff:
-        'More product control, with customer, support and revenue risk.',
-      action:
-        'Talk to 5 students or local businesses about their biggest spreadsheet headache before writing code.',
+      tradeoff: 'Own the product, support and revenue risk.',
+      action: 'Ask a local shop about one recurring problem.',
     },
   ];
 
@@ -42,9 +34,7 @@ export default function Tradeoffs() {
         OPPORTUNITY / FOUR WAYS TO BUILD YOUR CAREER
       </Chapter>
       <h1>
-        Four ways to build
-        <br />
-        <em>your career.</em>
+        Four ways to build <em>your career.</em>
       </h1>
       <div className="route-rows" role="list">
         {doors.map((door, i) => (
@@ -65,14 +55,28 @@ export default function Tradeoffs() {
           </section>
         ))}
       </div>
-      <div className="route-tradeoff">
-        <strong>Choose your next responsibility.</strong>
-        <span>
-          Grow from a task to a feature to a system. Keep learning and scope
-          sustainable.
-        </span>
+      <div className="career-balance">
+        <span className="stat-kicker">PROS &amp; CONS · EXPERIENCE-BASED</span>
+        <div className="career-balance-columns">
+          <div>
+            <strong>Pros</strong>
+            <ul>
+              <li>Work from anywhere</li>
+              <li>You can build and ship alone</li>
+              <li>Skills carry across employers</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Cons</strong>
+            <ul>
+              <li>Tools keep changing</li>
+              <li>Junior competition</li>
+              <li>Constant learning</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <Footer refs={['payPolicy', 'globalPay', 'reviewPractice']} />
+      <Footer refs={['reviewPractice']} />
     </div>
   );
 }

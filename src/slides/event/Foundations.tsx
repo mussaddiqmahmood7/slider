@@ -46,11 +46,41 @@ export default function Foundations() {
           </p>
         </aside>
       </div>
+      <div className="starter-stack" aria-label="Example starting technologies">
+        <div>
+          <strong>Frontend</strong>
+          <span>
+            HTML · CSS · JavaScript/TypeScript
+            <br />
+            React or Next.js
+          </span>
+        </div>
+        <div>
+          <strong>Backend</strong>
+          <span>
+            Node.js, Python
+            <br />
+            or PHP
+          </span>
+        </div>
+        <div>
+          <strong>Data</strong>
+          <span>
+            PostgreSQL
+            <br />
+            or MySQL
+          </span>
+        </div>
+        <div>
+          <strong>Delivery</strong>
+          <span>Git · deployment</span>
+        </div>
+      </div>
+      <p className="stack-caption">One example stack. Others exist.</p>
       <p className="revision-takeaway">
-        Concepts transfer. When changing stacks, verify the APIs, libraries and
-        runtime behavior.
+        Concepts transfer. Verify unfamiliar APIs and runtime behavior.
       </p>
-      <Footer refs={['foundations', 'learning', 'criticalThinking']} />
+      <Footer refs={['foundations']} />
     </div>
   );
 }
