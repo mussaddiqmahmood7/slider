@@ -1,57 +1,73 @@
 import { Chapter, Footer } from './Parts';
+
 export default function Opening() {
   return (
     <div className="slide-content event-opening">
-      <Chapter number="01">WEB DEVELOPMENT IN THE AI ERA</Chapter>
+      <Chapter number="01">KEYNOTE · COMSATS SAHIWAL 2026</Chapter>
       <div className="opening-grid">
         <div className="opening-copy">
+          <p className="speaker-badge">
+            <span className="speaker-name">Mussaddiq Mahmood</span> · Software
+            Engineer
+          </p>
           <h1>
-            The web is
+            If AI can build
             <br />
-            still being
+            websites, why learn
             <br />
-            <em>built.</em>
+            <em>web development?</em>
           </h1>
           <p className="opening-subtitle">
-            From writing code to owning outcomes.
+            Syntax got cheap. Judgment got expensive.
           </p>
           <p className="opening-definition">
-            Web development turns a user need into a working web experience.
+            Anyone can prompt a prototype. An engineer ships systems people can
+            rely on.
           </p>
         </div>
         <div
           className="need-diagram"
-          aria-label="A student's need becomes an interface and a useful outcome"
+          aria-label="Comparison between an AI prompt prototype and a production system"
         >
-          <p className="diagram-caption">FROM A NEED TO AN EXPERIENCE</p>
-          <div className="need-label">
-            <span className="diagram-index">01</span>
-            <span>“Find my course.”</span>
-          </div>
-          <div className="diagram-line" aria-hidden="true" />
+          <p className="diagram-caption">
+            THE PROMPT VS. THE PRODUCTION SYSTEM
+          </p>
           <div className="browser-sketch">
             <div className="browser-bar">
               <i />
               <i />
               <i />
-              <span>Student portal</span>
+              <span>Prompt prototype · generated in 15s</span>
             </div>
             <div className="course-sketch">
-              <small>YOUR NEXT STEP</small>
+              <small>SURFACE INTERFACE</small>
               <strong>
                 Explore.
                 <br />
-                Choose.
-                <br />
-                Learn.
+                Book seat.
               </strong>
               <div className="sketch-input">
-                Search courses <span>↗</span>
+                Reserve course <span>↗</span>
               </div>
             </div>
           </div>
-          <div className="need-outcome">
-            <span aria-hidden="true">↳</span> A student can take the next step.
+          <div className="diagram-line" aria-hidden="true" />
+          <div className="reality-check-card">
+            <small>WHAT PRODUCTION STILL DEMANDS</small>
+            <ul>
+              <li>
+                <span className="glyph-warn">[ ! ]</span> Concurrency: two
+                students click the last seat
+              </li>
+              <li>
+                <span className="glyph-warn">[ ! ]</span> Authorization: Student
+                A cannot read Student B’s records
+              </li>
+              <li>
+                <span className="glyph-warn">[ ! ]</span> Resilience: payment
+                succeeds but booking drops
+              </li>
+            </ul>
           </div>
         </div>
       </div>

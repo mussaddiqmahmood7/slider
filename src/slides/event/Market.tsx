@@ -1,58 +1,62 @@
 import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
+
 export default function Market() {
   return (
     <div className="slide-content demand-slide">
-      <Chapter number="07">JOBS / SIX YEARS, WITH THE RIGHT LABEL</Chapter>
+      <Chapter number="07">JOBS / HIRING TREND & BAR SHIFT</Chapter>
       <h1>
-        The market has jobs.
+        Entry is harder.
         <br />
-        <em>Entry takes proof.</em>
+        <em>Demand for proof is higher.</em>
       </h1>
       <div className="demand-grid">
         <figure className="employment-chart">
           <figcaption>
-            US web developers + interface designers
+            US software postings, not jobs created
             <br />
-            <span>Estimated wage/salary jobs held each May</span>
+            <span>
+              Indeed Hiring Lab via FRED (IHLIDXUSTPSOFTDEVE) · Feb 2020 = 100
+            </span>
           </figcaption>
           <div className="employment-bars">
-            {e.employment.map(({ year, jobs }) => (
-              <div className="employment-column" key={year}>
-                <strong>{jobs.toLocaleString('en-US')}</strong>
+            {e.postings.series.map(({ year, month, value }) => (
+              <div className="employment-column" key={`${year}-${month}`}>
+                <strong>{value.toFixed(1)}</strong>
                 <div className="employment-track">
-                  <span style={{ height: `${(jobs / 200000) * 100}%` }} />
+                  <span style={{ height: `${(value / 240) * 100}%` }} />
                 </div>
                 <span>
                   {year}
-                  {year === 2020 ? '*' : ''}
+                  <small>{month}</small>
                 </span>
               </div>
             ))}
           </div>
           <p>
-            *2020 category/method break. Annual snapshots, not newly created
-            jobs; do not subtract to infer hiring.
+            Up about 15% since Feb 2025 (Indeed, Jul 2026); about 24% below Feb
+            2020 (Sep 2026). Postings indicate hiring demand, not net jobs
+            created.
           </p>
         </figure>
         <aside className="openings-stat">
-          <span className="stat-kicker">SEPARATE US FORECAST</span>
-          <strong>13,600</strong>
-          <h2>openings / year</h2>
+          <span className="stat-kicker">WHERE DEMAND CONCENTRATED</span>
+          <strong>{e.postings.seniorRisePercent}%</strong>
+          <h2>of net rise was senior roles</h2>
           <p>
-            Average projected for 2025–35.
-            <br />
-            Includes replacement hiring.
+            May 2025 to May 2026 net increase in US software postings (Indeed
+            Hiring Lab).
           </p>
           <small>
-            No verified six-year worldwide or Pakistan web-job creation series
-            was established.
+            BLS projects ~{e.blsOutlook.annualOpenings.toLocaleString('en-US')}{' '}
+            annual openings (2025–35). The bar rose: junior entry requires proof
+            of delivery.
           </small>
         </aside>
       </div>
       <Footer
-        section="US EVIDENCE · NO AI-CAUSATION CLAIM OR JOB GUARANTEE"
-        refs={['annualJobs', 'outlook']}
+        section="US SOFTWARE POSTINGS INDEX · NOT JOBS CREATED"
+        refs={['indeed', 'indeedSenior', 'outlook']}
       />
     </div>
   );

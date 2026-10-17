@@ -1,22 +1,29 @@
 import { useState } from 'react';
+import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
+
 export default function Security() {
   const [reviewed, setReviewed] = useState(false);
   return (
     <div className="slide-content security-slide">
       <Chapter number="06">AI WORKFLOW / SPECIFY, IMPLEMENT, VERIFY</Chapter>
       <h1>
-        Write the rules.
+        AI can write code.
         <br />
-        <em>Then prove them.</em>
+        <em>Who decides what’s correct?</em>
       </h1>
+      <div className="security-stat-banner">
+        <span>[ ! ] BENCHMARK EVIDENCE:</span> {e.security.riskyFlawPercent}% of
+        benchmark tasks produced a risky flaw; {e.security.xssFailurePercent}%
+        failed XSS (CWE-80) (Veracode 2026, vendor benchmark).
+      </div>
       <div className="security-grid">
         <div className="code-comparison">
           <div className="code-heading">
             <span>ILLUSTRATIVE PSEUDOCODE</span>
             <span>
               {reviewed
-                ? 'OWNERSHIP CHECK ADDED'
+                ? 'OWNERSHIP GUARD ENFORCED'
                 : 'REVIEW THE MISSING DECISION'}
             </span>
           </div>
@@ -28,11 +35,11 @@ export default function Security() {
             }
           >
             <code>
-              <span>record = load(request.id)</span>
+              <span>record = db.load(request.params.id)</span>
               <mark className={reviewed ? 'guard-present' : 'guard-missing'}>
                 {reviewed
-                  ? 'if record.ownerId != user.id:\n    denyAccess()'
-                  : '// Who is allowed to read this?\n// Ownership check is missing.'}
+                  ? 'if record.ownerId != user.id:\n    raise UnauthorizedError("Access Denied")'
+                  : '# Who is allowed to read this?\n# Ownership check is missing.'}
               </mark>
               <span>return record</span>
             </code>
@@ -67,7 +74,7 @@ export default function Security() {
             </div>
             <div>
               <dt>Forbidden</dt>
-              <dd>Another user gets no record.</dd>
+              <dd>Another user gets denied.</dd>
             </div>
             <div>
               <dt>Evidence</dt>
@@ -81,8 +88,8 @@ export default function Security() {
         Review + test
       </p>
       <Footer
-        section="ILLUSTRATIVE SPEC + PSEUDOCODE · NOT A COMPLETE SECURITY RECIPE"
-        refs={['specs']}
+        section="SPEC-DRIVEN ENGINEERING · VIBE CODING VS. SPEC VERIFICATION"
+        refs={['security', 'specs']}
       />
     </div>
   );

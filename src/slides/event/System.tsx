@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { Chapter, Footer } from './Parts';
+
 export default function System() {
   const [trace, setTrace] = useState(false);
   return (
     <div className="slide-content system-slide">
-      <Chapter number="02">ROLES / FOLLOW THE WHOLE FEATURE</Chapter>
+      <Chapter number="02">SCOPE / FOLLOW THE WHOLE FEATURE</Chapter>
       <h1>
-        One product.
+        A website is more
         <br />
-        <em>Broader ownership.</em>
+        than what you see.
+        <br />
+        <em>One engineer. Full-stack reach.</em>
       </h1>
       <div className={`system-map ${trace ? 'is-tracing' : ''}`}>
         <div className="system-node browser-node">
@@ -22,30 +25,30 @@ export default function System() {
           <p>
             Structure · layout
             <br />
-            interaction
+            interaction · failure states
           </p>
         </div>
         <div className="request-bridge">
-          <span>{trace ? 'GET /courses' : 'request'}</span>
+          <span>{trace ? 'POST /book-seat' : 'request'}</span>
           <b aria-hidden="true">⇄</b>
-          <span>{trace ? 'course data' : 'response'}</span>
+          <span>{trace ? 'HTTP 200 confirmed' : 'response'}</span>
         </div>
         <div className="system-node api-node">
-          <small>BACKEND</small>
+          <small>APPLICATION</small>
           <div className="node-visual" aria-hidden="true">
             {'{ }'}
           </div>
-          <h2>Application / API</h2>
+          <h2>API & Rules</h2>
           <p>
-            Rules · permissions
+            Auth · permissions
             <br />
-            validation
+            concurrency · validation
           </p>
         </div>
         <div className="request-bridge">
-          <span>{trace ? 'allowed query' : 'query'}</span>
+          <span>{trace ? 'concurrency lock' : 'query'}</span>
           <b aria-hidden="true">⇄</b>
-          <span>{trace ? 'matching rows' : 'result'}</span>
+          <span>{trace ? 'commit transaction' : 'result'}</span>
         </div>
         <div className="system-node data-node">
           <small>DATA</small>
@@ -58,23 +61,25 @@ export default function System() {
           <p>
             Relationships
             <br />
-            persistence
+            integrity · persistence
           </p>
         </div>
       </div>
       <div className="system-span">
-        <span>FULL-STACK · spans frontend + backend</span>
-        <span>AI expands your reach. You own the boundaries.</span>
+        <span>FULL-STACK · spans frontend, application and data</span>
+        <span>
+          AI writes inside each box. You own the contracts between them.
+        </span>
       </div>
       <button
         className="action"
         aria-pressed={trace}
         onClick={() => setTrace(!trace)}
       >
-        {trace ? 'Reset request trace' : 'Trace a course request'}{' '}
+        {trace ? 'Reset booking trace' : 'Trace a seat reservation'}{' '}
         <span aria-hidden="true">↗</span>
       </button>
-      <Footer section="ILLUSTRATIVE DYNAMIC SYSTEM · THIS DECK IS STATIC" />
+      <Footer section="END-TO-END SYSTEM THINKING · FROM CLICK TO DATABASE" />
     </div>
   );
 }

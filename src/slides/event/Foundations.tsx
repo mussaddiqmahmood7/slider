@@ -1,56 +1,57 @@
 import { Chapter, Footer } from './Parts';
+
 export default function Foundations() {
   return (
     <div className="slide-content concepts-slide">
-      <Chapter number="03">SKILLS / UNDERSTANDING OUTLASTS SYNTAX</Chapter>
+      <Chapter number="03">FOUNDATIONS / WHAT SURVIVES THE HYPE</Chapter>
       <h1>
         Learn the concepts.
         <br />
-        <em>Look up the syntax.</em>
+        <em>Syntax will change.</em>
       </h1>
       <div className="concepts-grid">
         <div className="concept-ledger">
           <div>
-            <strong>Interface</strong>
-            <span>Meaning, accessibility, layout, state</span>
+            <strong>Interfaces</strong>
+            <span>Meaning, accessibility, layout, state flow</span>
           </div>
           <div>
-            <strong>System</strong>
-            <span>HTTP, data models, permissions, failures</span>
+            <strong>Systems</strong>
+            <span>HTTP contracts, data models, permissions, failures</span>
           </div>
           <div>
             <strong>Delivery</strong>
-            <span>Git, debugging, tests, deployment</span>
+            <span>Git hygiene, root-cause debugging, tests, deployment</span>
           </div>
           <div>
-            <strong>AI collaboration</strong>
-            <span>Clear specs, context, small changes, review</span>
+            <strong>Directing AI</strong>
+            <span>Clear specs, context constraints, small diffs, review</span>
           </div>
         </div>
         <aside className="concept-answer">
           <span className="stat-kicker">IS HTML STILL WORTH LEARNING?</span>
           <h2>
-            Yes. Learn what
+            HTML is the vocabulary
             <br />
-            good output means.
+            you review AI in.
           </h2>
           <p>
-            A real button. A labeled input.
+            A real accessible button. A labeled input.
             <br />A page everyone can use.
           </p>
           <p>
-            Use one stack to build depth.
+            You cannot review what you cannot read.
             <br />
-            Transfer the ideas to the next.
+            Understand the output you approve.
           </p>
         </aside>
       </div>
       <p className="revision-takeaway">
-        AI can translate code. You still check behavior, libraries and runtime
-        differences.
+        Concepts transfer across tools. Moving between stacks becomes much
+        faster once you understand the invariants.
       </p>
       <Footer
-        section="PRACTICAL GUIDANCE · UNDERSTAND, BUILD, EXPLAIN"
+        section="ENGINEERING FOUNDATIONS · UNDERSTAND, BUILD, EXPLAIN"
         refs={['foundations']}
       />
     </div>

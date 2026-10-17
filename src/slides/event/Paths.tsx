@@ -1,4 +1,5 @@
 import { Chapter, Footer } from './Parts';
+
 export default function Paths() {
   const steps = [
     [
@@ -9,7 +10,7 @@ export default function Paths() {
     [
       '02',
       'Make the work inspectable',
-      'Live demo + README + small commits + tests + decisions.',
+      'Live demo + README + small atomic commits + tests + decisions.',
     ],
     [
       '03',
@@ -17,13 +18,14 @@ export default function Paths() {
       'A peer review. A targeted application. An alumni introduction.',
     ],
   ];
+
   return (
     <div className="slide-content first-job-slide">
-      <Chapter number="09">FRESHERS / MAKE YOUR ABILITY VISIBLE</Chapter>
+      <Chapter number="09">FRESHER PLAYBOOK / STAND OUT WITH PROOF</Chapter>
       <h1>
-        Your first advantage:
+        No experience?
         <br />
-        <em>proof you can deliver.</em>
+        <em>Build proof.</em>
       </h1>
       <div className="first-job-grid">
         <ol className="proof-steps">
@@ -38,18 +40,35 @@ export default function Paths() {
           ))}
         </ol>
         <aside className="portfolio-receipt">
-          <span className="stat-kicker">A PORTFOLIO THAT CAN BE REVIEWED</span>
+          <span className="stat-kicker">
+            TUTORIAL PROJECT VS. ENGINEERING PROJECT
+          </span>
           <h2>Campus event booking</h2>
           <ul>
-            <li>Register → confirm → cancel</li>
-            <li>Handle full / failed / duplicate</li>
-            <li>Explain one design tradeoff</li>
-            <li>Fix a bug live, with reasoning</li>
+            <li>
+              <span>[ ✓ ]</span> Register → confirm → cancel workflow
+            </li>
+            <li>
+              <span>[ ✓ ]</span> Handles concurrency: two students click the
+              last seat
+            </li>
+            <li>
+              <span>[ ✓ ]</span> Role-based authorization & edge-case recovery
+            </li>
+            <li>
+              <span>[ ✓ ]</span> Explain one design tradeoff; test suite passing
+            </li>
           </ul>
-          <p>AI use is fine. Explain what you accepted, changed and tested.</p>
+          <p>
+            AI use is fine. Explain what you accepted, changed, and verified.
+          </p>
         </aside>
       </div>
-      <Footer section="PRACTICAL ROUTE · APPLY WHILE IMPROVING · NO FIXED HIRING TIMELINE" />
+      <p className="paths-reality-note">
+        Junior competition is real and continuous learning never stops. One
+        shipped, inspectable system beats a generic CV.
+      </p>
+      <Footer section="FRESHER STRATEGY · PRODUCTION STANDARDS BEAT GENERIC CVs" />
     </div>
   );
 }

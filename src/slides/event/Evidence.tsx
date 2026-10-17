@@ -1,57 +1,49 @@
 import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
+
 export default function Evidence() {
   return (
     <div className="slide-content adoption-slide">
-      <Chapter number="05">AI / USE IT, THEN CHECK IT</Chapter>
+      <Chapter number="05">AI / ADOPTION VS. CRITICAL TRUST</Chapter>
       <h1>
-        AI is common.
+        Everyone uses AI.
         <br />
-        <em>Review is still your job.</em>
+        <em>Few trust it with big decisions.</em>
       </h1>
-      <div className="adoption-grid">
-        <section className="adoption-numbers">
-          <span className="stat-kicker">USE AT WORK · n = 17,464</span>
-          <div>
-            <strong>
-              {e.usage.anyRounded}
-              <small>%</small>
-            </strong>
-            <p>use at least one AI tool</p>
-          </div>
-          <div className="non-use">
-            <strong>
-              {e.usage.nonUseRounded}
-              <small>%</small>
-            </strong>
-            <p>do not use AI tools</p>
-          </div>
-          <small>Rounded publisher summary · survey respondents</small>
+      <div className="adoption-grid three-stats-grid">
+        <section className="adoption-card">
+          <span className="stat-kicker">WORK ADOPTION</span>
+          <strong>
+            {e.usage.usePercent}
+            <small>%</small>
+          </strong>
+          <p>use at least one AI tool at work</p>
         </section>
-        <section className="review-chart">
-          <span className="stat-kicker">
-            BEFORE USING AN AI ANSWER · n = 13,162
-          </span>
-          {e.review.actions.map(({ label, percent }) => (
-            <div className="review-bar" key={label}>
-              <div>
-                <span>{label}</span>
-                <strong>{percent}%</strong>
-              </div>
-              <div className="review-track">
-                <span style={{ width: `${percent}%` }} />
-              </div>
-            </div>
-          ))}
-          <p className="review-scope">
-            Multiple choices allowed. “Use as-is” is self-report, not a measured
-            rate of blind acceptance.
-          </p>
+        <section className="adoption-card">
+          <span className="stat-kicker">NON-USE</span>
+          <strong>
+            {e.usage.nonUsePercent}
+            <small>%</small>
+          </strong>
+          <p>do not use AI tools in their work</p>
+        </section>
+        <section className="adoption-card trust-card">
+          <span className="stat-kicker">CRITICAL DECISIONS</span>
+          <strong>
+            {e.usage.trustImportantPercent}
+            <small>%</small>
+          </strong>
+          <p>would trust AI for an important decision</p>
         </section>
       </div>
+      <p className="adoption-takeaway">
+        The gap between daily use and critical trust is where engineering lives.
+        Survey respondents; use at least one AI tool at work (Stack Overflow
+        2026).
+      </p>
       <Footer
-        section="STACK EXCHANGE INC. · 2026 · COMMUNITY SURVEY · ODbL 1.0"
-        refs={['usage', 'review']}
+        section="STACK OVERFLOW 2026 DEVELOPER SURVEY · ADOPTION VS. TRUST"
+        refs={['usage', 'trust']}
       />
     </div>
   );

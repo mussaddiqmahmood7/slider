@@ -10,56 +10,61 @@ import Foundations from './event/Foundations';
 import Abstraction from './event/Abstraction';
 import Security from './event/Security';
 import type { SlideDefinition } from './types';
+
 export const slides: readonly SlideDefinition[] = [
-  { id: 'intro', title: 'The web is still being built', component: Opening },
+  {
+    id: 'intro',
+    title: 'If AI can build websites, why learn web development?',
+    component: Opening,
+  },
   {
     id: 'one-product',
-    title: 'One product, broader ownership',
+    title: 'A website is more than what you see',
     component: System,
   },
   {
     id: 'foundations',
-    title: 'Learn concepts, look up syntax',
+    title: 'Learn the concepts. Syntax will change.',
     component: Foundations,
   },
   {
     id: 'abstraction',
-    title: 'The web: five overlapping waves',
+    title: 'Every era hid the last one. The spec is next.',
     component: Abstraction,
   },
   {
     id: 'ai-in-practice',
-    title: 'AI adoption and what developers check',
+    title: 'Everyone uses AI. Few trust it with big decisions.',
     component: Evidence,
   },
   {
     id: 'review-the-code',
-    title: 'Specify the change, prove it works',
+    title: 'AI can write code. Who decides what’s correct?',
     component: Security,
   },
   {
     id: 'market-evidence',
-    title: 'Jobs: six annual snapshots and the outlook',
+    title: 'Entry is harder. Demand for proof is higher.',
     component: Market,
   },
   {
     id: 'income-and-growth',
-    title: 'Local pay and international offers',
+    title: 'What can web developers actually earn?',
     component: Income,
   },
   {
     id: 'choose-a-path',
-    title: 'Freshers: proof you can deliver',
+    title: 'No experience? Build proof.',
     component: Paths,
   },
   {
     id: 'the-work',
-    title: 'Four doors into paid work',
+    title: 'Four ways to build your career',
     component: Tradeoffs,
   },
   {
     id: 'try-the-work',
-    title: 'AI could build this. Why hire you?',
+    title: 'If AI can code, why should anyone hire you?',
     component: Closing,
   },
 ];

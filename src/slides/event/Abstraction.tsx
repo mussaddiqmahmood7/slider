@@ -1,4 +1,5 @@
 import { Chapter, Footer } from './Parts';
+
 const waves = [
   [
     '2000s',
@@ -7,38 +8,41 @@ const waves = [
     'Structure + behavior',
   ],
   [
-    '2000s–2010s',
+    '2010s',
     'Reuse a function',
     'jQuery · plugins · utilities',
     'Choose + integrate',
   ],
   [
-    '2010s onward',
+    '2015s',
     'Compose the UI',
     'React · Bootstrap · Tailwind',
     'State + design systems',
   ],
   [
-    '2010s onward',
+    '2020s',
     'Build the application',
     'Next.js · Nuxt · Remix',
     'Routing + data + delivery',
   ],
   [
-    '2020s onward',
-    'Specify + direct AI',
-    'Requirements → plan → changes',
+    '2026+',
+    'Direct and verify AI',
+    'Requirements → spec → verified diff',
     'Architecture + verification',
   ],
 ];
+
 export default function Abstraction() {
   return (
     <div className="slide-content waves-slide">
-      <Chapter number="04">THE WEB / OVERLAPPING WAVES OF ABSTRACTION</Chapter>
+      <Chapter number="04">
+        EVOLUTION / OVERLAPPING WAVES OF ABSTRACTION
+      </Chapter>
       <h1>
-        Less work by hand.
+        Every era hid the last one.
         <br />
-        <em>More decisions to own.</em>
+        <em>The spec is next.</em>
       </h1>
       <ol
         className="web-waves"
@@ -55,14 +59,16 @@ export default function Abstraction() {
         ))}
       </ol>
       <div className="wave-ownership">
-        <span>WHO REVIEWS THE SPEC?</span>
+        <span>
+          A NON-ENGINEER CAN PROTOTYPE, BUT CANNOT OWN PRODUCTION ARCHITECTURE
+        </span>
         <p>
-          The developer: choose the approach, challenge assumptions, verify the
-          result.
+          Someone must write the spec, define data constraints, and audit the
+          diff. That someone is you.
         </p>
       </div>
       <Footer
-        section="OLDER LAYERS STILL WORK · CHOOSE FOR THE PROBLEM"
+        section="ABSTRACTION LADDER · EACH ERA EXPANDS WHAT ONE ENGINEER CAN SHIP"
         refs={['specs']}
       />
     </div>

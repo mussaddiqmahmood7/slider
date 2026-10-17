@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Chapter, Footer } from './Parts';
+
 export default function Closing() {
   const [revealed, setRevealed] = useState(false);
+
   return (
     <div className="slide-content future-closing">
-      <Chapter number="11">YOUR NEXT INTERVIEW / QUESTIONS WELCOME</Chapter>
+      <Chapter number="11">THE CLOSING / YOUR NEXT MOVE</Chapter>
       <div className="closing-interview">
         <div className="interview-copy">
-          <span className="stat-kicker">“AI COULD BUILD THIS.”</span>
+          <span className="stat-kicker">
+            “AI COULD BUILD THIS IN 15 MINUTES.”
+          </span>
           <h1>
-            Why hire
+            Why should
             <br />
-            <em>you?</em>
+            we hire <em>you?</em>
           </h1>
           <button
             className="action"
@@ -31,26 +35,32 @@ export default function Closing() {
             {revealed ? (
               <>
                 <strong>
-                  “I can decide what to build.
-                  <br />
-                  And prove it works.”
+                  “AI generated the code.
+                  <br />I decide what to build, and I prove it works.”
                 </strong>
                 <p>
                   Understand the user. Shape the spec.
                   <br />
-                  Review the change. Own the outcome.
+                  Audit the security. Own the outcome.
                 </p>
               </>
             ) : (
               <>
                 <strong>The demo starts the conversation.</strong>
                 <p>
-                  Your decisions, debugging and evidence
+                  Your decisions, debugging, and proof of correctness
                   <br />
-                  show what you can contribute.
+                  show what you contribute.
                 </p>
               </>
             )}
+          </div>
+          <div className="challenge-strip">
+            <span className="stat-kicker">THIS MONDAY’S SPEC CHALLENGE:</span>
+            <p>
+              Direct AI to build a real campus workflow—then catch and document
+              3 bugs your AI made before shipping.
+            </p>
           </div>
         </div>
         <a
@@ -62,18 +72,19 @@ export default function Closing() {
           <Image
             src="/images/resources-qr.svg"
             alt="QR code linking directly to the student resource handout"
-            width={200}
-            height={200}
+            width={180}
+            height={180}
           />
           <span>YOUR FIELD GUIDE ↗</span>
-          <strong>Resources · specs · first-job steps</strong>
+          <strong>Handout · specs · starter repo</strong>
           <small>
             github.com/mussaddiqmahmood7/slider
             <br />
-            Presentation branch → docs → student-resources.md
+            docs/student-resources.md
           </small>
         </a>
       </div>
+
       <Footer section="BUILD WITH AI. BECOME SOMEONE PEOPLE CAN TRUST TO SHIP." />
     </div>
   );

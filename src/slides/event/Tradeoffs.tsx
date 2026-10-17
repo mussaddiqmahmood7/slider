@@ -1,60 +1,84 @@
+import { evidence as e } from '@/content/evidence';
 import { Chapter, Footer } from './Parts';
+
 export default function Tradeoffs() {
-  const paths = [
-    [
-      'Local team',
-      'Internship / junior role',
-      'Show a relevant demo; ask who reviews your work.',
-      'Learn delivery + team habits.',
-    ],
-    [
-      'Remote team',
-      'A small reviewed contribution',
-      'Show written updates, reliable handoff and async work.',
-      'Earn trust across distance.',
-    ],
-    [
-      'Freelance',
-      'One bounded client problem',
-      'Agree scope, milestones, payment and handover.',
-      'Deliver, then ask for a referral.',
-    ],
-    [
-      'Own product',
-      'A user with a recurring problem',
-      'Talk to users before building; test willingness to pay.',
-      'Own support + distribution.',
-    ],
+  const doors = [
+    {
+      name: 'Local team',
+      scope: 'Software houses · on-site / hybrid',
+      tradeoff:
+        'Lower starting pay vs rapid in-person senior mentorship and team habits.',
+      action:
+        'Ship one complete CRUD app with auth and walk into an interview with a live demo.',
+    },
+    {
+      name: 'Remote team',
+      scope: 'Global startups · async distributed',
+      tradeoff:
+        'Zero handholding and strict async communication vs global USD market compensation.',
+      action:
+        'Record a 2-minute Loom walkthrough explaining an architectural decision and commit clean PRs.',
+    },
+    {
+      name: 'Freelance',
+      scope: 'Contract delivery · direct clients',
+      tradeoff:
+        'Irregular client pipeline and sales overhead vs early independence and market feedback.',
+      action:
+        'Package one specific outcome ("I fix Next.js page latency & Stripe webhooks") instead of "full-stack dev".',
+    },
+    {
+      name: 'Own product',
+      scope: 'Micro-SaaS · niche tools',
+      tradeoff:
+        'Zero guaranteed salary and total market risk vs 100% equity and product ownership.',
+      action:
+        'Talk to 5 students or local businesses about their biggest spreadsheet headache before writing code.',
+    },
   ];
+
   return (
     <div className="slide-content route-slide">
-      <Chapter number="10">OPPORTUNITY / CHOOSE YOUR FIRST DOOR</Chapter>
+      <Chapter number="10">
+        OPPORTUNITY / FOUR WAYS TO BUILD YOUR CAREER
+      </Chapter>
       <h1>
-        One skill base.
+        Four ways to build
         <br />
-        <em>Four ways to use it.</em>
+        <em>your career.</em>
       </h1>
       <div className="route-rows" role="list">
-        {paths.map(([name, start, action, growth], i) => (
-          <section role="listitem" key={name}>
-            <span className="route-number">0{i + 1}</span>
-            <h2>
-              {name}
-              <small>{start}</small>
-            </h2>
-            <p>{action}</p>
-            <strong>{growth}</strong>
+        {doors.map((door, i) => (
+          <section role="listitem" key={door.name}>
+            <div className="route-row-header">
+              <span className="route-number">0{i + 1}</span>
+              <h2>
+                {door.name}
+                <small>· {door.scope}</small>
+              </h2>
+            </div>
+            <p>
+              <strong>Tradeoff:</strong> {door.tradeoff}
+            </p>
+            <div className="route-action">
+              <strong>First action:</strong> {door.action}
+            </div>
           </section>
         ))}
       </div>
       <div className="route-tradeoff">
-        <strong>Grow your ownership.</strong>
+        <strong>NATIONAL DEMAND CONTEXT:</strong>
         <span>
-          Feature → reliable system → product decisions. More reach also means
-          learning, support and uncertainty.
+          Pakistan freelance tech exports reached {e.exports.freelanceUsd}, up +
+          {e.exports.freelanceGrowthPercent}% in {e.exports.period} (State Bank
+          of Pakistan via Economic Survey). Choose the door matching your
+          current proof.
         </span>
       </div>
-      <Footer section="CAREER GUIDANCE · SPECIALIZE DEEPLY, UNDERSTAND THE WHOLE" />
+      <Footer
+        section="CAREER STRATEGY · START WITH MENTORSHIP, SCALE TO INDEPENDENCE"
+        refs={['pakExports']}
+      />
     </div>
   );
 }
