@@ -1,112 +1,58 @@
-# Next Slide Starter
+# Web Development in the AI Era
 
-A small Next.js starter for presentations built from React components. Clone it, write your story, and host the static output wherever you choose. No accounts, database, or runtime services.
+The **COMSATS University Islamabad, Sahiwal Campus** presentation branch. Eleven slides about concepts, broader system ownership, the web’s changing abstractions, working with AI, realistic market evidence and a fresher’s route into paid work.
 
-![The actual starter in Paper](docs/starter.png)
+For the reusable, neutral starter and the three-step authoring guide, use **[main](https://github.com/mussaddiqmahmood7/slider/tree/main)** or **[v0.1.0](https://github.com/mussaddiqmahmood7/slider/tree/v0.1.0)**. Event content is kept off main.
 
-## Start
+![The actual eleven-slide presentation](docs/deck-overview.jpg)
 
-Use **Node.js 24 LTS** and its bundled npm (tested with Node 24.22.0/npm 11.19.1).
+## Run and rehearse
+
+Use **Node 24 LTS** (tested 24.22.0 with npm 11.19.1).
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. `npm ci` reproduces the committed `package-lock.json`; keep the lockfile when troubleshooting installs.
-
-## Add a slide
-
-1. Create an ordinary component in `src/slides/`:
-
-```tsx
-export default function MySlide() {
-  return (
-    <div className="slide-content">
-      <p className="eyebrow">A NEW CHAPTER</p>
-      <h1>One clear idea.</h1>
-      <p>Your markup, diagrams, images, and interactions.</p>
-    </div>
-  );
-}
-```
-
-2. Import it in `src/slides/index.ts` and add `{ id: 'one-clear-idea', title: 'One clear idea', component: MySlide }` to `slides`.
-3. Reorder or remove entries to change the deck. Build and present.
-
-IDs must be unique lowercase URL slugs. Titles name slides for assistive technology and the overview. An optional `preview: '/images/my-slide.webp'` supplies a local overview image; otherwise the overview uses a number/title composition. It never mounts every slide to generate previews. Counts come from the array; there is no fixed slide limit. Components sit inside the client presentation boundary, so hooks work without passing component constructors through a server boundary.
-
-Change metadata in `src/app/layout.tsx`, deck labels in `src/deck.config.ts`, and semantic theme tokens in `src/app/globals.css`. Paper, Midnight, Blueprint, and Sand color controls, content, diagrams, and overview together. Theme selection persists locally and keeps slide state.
-
-## Present
-
-- Arrow keys or Page Up/Down: previous/next. Space: next; Shift+Space: previous.
-- Home/End: first/last. No wrapping. No scroll-wheel navigation.
-- **G** or **Overview**: visual index. Tab between cards, Enter to select, Escape to dismiss.
-- **F** or **Fullscreen**: fullscreen where supported. Escape also retains its native fullscreen behavior.
-- Share a stable link such as `/#make-it-visible`. Refresh and browser Back/Forward preserve navigation.
-
-Shortcuts pause inside links, buttons, form fields, and editable content, and ignore modified/handled events. Focus stays visible. Changes use a restrained live announcement. Motion respects reduced-motion preferences. Phones use natural scrolling and stacked layouts. Authors still need to check their own compositions, long text, images, zoom, and contrast.
-
-Printing and private presenter notes are intentionally outside this starter. Browser printing does not export the whole deck.
-
-## Optional local languages
-
-Single-language authors need no dictionaries: write JSX and set `language`/`direction` in `deck.config.ts`. Localization ships disabled; `?lang=` is ignored in this mode.
-
-To try the compact English/Urdu example:
-
-1. Import `exampleLocales` from `../examples/localization/locales` in `src/deck.config.ts`.
-2. Set `localization` to `{ enabled: true, defaultLocale: 'en', locales: exampleLocales }`.
-3. Run and inspect `/?lang=ur#intro`. The example translates shell controls, opener title/content, and sets Urdu RTL. Other slides deliberately retain English.
-
-Local files explicitly register code, label, direction, optional `messages`, `titles` by slide ID, author-defined `content`, and optional `components` overrides by slide ID. Use `useLocale()` from `src/lib/localization.tsx` only in components needing text. There is still **one ordered registry**. Text-only translation can reuse a layout; component overrides support different layouts.
-
-Missing shell labels/titles use the configured default locale then English/original title. Missing components use the original component; custom content should use `??` fallback as in `IntroSlide`. Incomplete definitions warn during development. A language toggle does **not** certify a complete translation: review mixed-language fallback. Invalid locale URLs use the default. URL query, hash, theme, and browser history work together; switching a component can reset its local state. Next/previous still follow canonical order in RTL. Authors supply and review translations and check RTL layout/font coverage; this example is not a claim about future slides. The included local Noto Arabic subset covers the example.
-
-After enabling this example, build, then run `TEST_LOCALIZATION=1 npx playwright test tests/localization.spec.ts` (set the environment variable using your shell's syntax). Restore the configuration for the default single-language starter.
-
-## Project map
-
-```text
-src/app/                       page, metadata, theme/style tokens
-src/components/presentation/   the presentation shell
-src/slides/                    your components and the ordered registry
-src/lib/                       navigation and opt-in locale helpers
-src/deck.config.ts             deck labels and language configuration
-examples/localization/         small opt-in Urdu example
-public/fonts/                  local fonts and their licenses
-tests/                         focused Chromium browser checks
-```
-
-## Checks and contribution
-
-```sh
-npm run check                 # ESLint, Prettier, strict TypeScript
-npm run build                 # creates out/
-npx playwright install chromium
-npm run test:e2e              # serves the production export automatically
-```
-
-`lint:fix`, `format`, and `format:check` are also available. Husky runs lint-staged on commit, formatting staged files and checking source correctness; it does not build on each commit. See [CONTRIBUTING.md](CONTRIBUTING.md). CI runs checks, build, and Chromium tests with no secrets.
-
-The flat ESLint configuration uses the official Next.js plugin directly plus TypeScript and React hook rules. This avoids ESLint 9-only peer dependencies in `eslint-config-next` while using supported ESLint 10. React Compiler is not enabled. [Official Next.js lint guidance](https://nextjs.org/docs/app/api-reference/config/eslint).
-
-## Build and host
+For a reliable local presentation:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-Open http://localhost:3000. Restart preview after rebuilding: its production file index is cached. Serve the **contents of `out/`** on any root-domain static host. This is an export-only app; do not use `next start`. It needs no internet after the build is available and the local preview is running. Installation itself needs internet. Opening `file://` is unsupported.
+Open http://localhost:3000. Preview serves the static `out/` export; restart it after rebuilding. No `next start`, runtime API, database or external assets are needed. Once dependencies/build output exist, the core deck works without internet while the local server runs. Citation/repository links need internet when opened. `file://` is unsupported.
 
-A GitHub Pages repository subpath requires a matching Next.js `basePath` **and** prefixes on public font/image/thumbnail paths (including CSS URLs). The default configuration targets a root domain; subpath deployment has not been validated. [Official static export guide](https://nextjs.org/docs/app/guides/static-exports).
+Use ←/→, Page Up/Down, Space/Shift+Space and Home/End. **G** opens the keyboard-accessible overview. **F** requests fullscreen. Controls remain available for touch; shortcuts pause inside interactive content. Themes persist and keep interaction state. Phones, tablets and short windows use a readable scrolling layout; larger screens retain the 16:9 composition. Deep links include `/#review-the-code` and `/#try-the-work`. Motion respects reduced-motion preferences; phone layouts scroll naturally.
 
-Keep fonts/images local, small, and licensed for redistribution. Give meaningful images useful alt text, reserve dimensions, and use empty alt for decoration. `next/image` is configured unoptimized for export: compress assets before committing. Inter and Noto Sans Arabic are distributed under their included SIL Open Font Licenses; see [font credits](docs/font-credits.md).
+The request trace on slide 2, ownership review on slide 6 and interview-answer reveal on slide 11 are local teaching interactions. Security pseudocode is illustrative, not production security certification. The event is English-only by default. The compact opt-in Urdu example belongs to the neutral starter on main; this talk is not a complete translation.
 
-## Use as your own
+## Notes, evidence and learning path
 
-Start from **main** or the `v0.1.0` baseline, replace the three sample components and registry entries, and edit metadata. Event-specific presentations belong on separate branches. The separate [COMSATS event branch](https://github.com/mussaddiqmahmood7/slider/tree/presentation/comsats-sahiwal) is an event example, not the starter source to copy by default.
+- [Student handout: begin here, milestones and primary-resource library](docs/student-resources.md).
+- [Speaker notes: 11 slide outlines, timings, prompts and Roman Urdu cues](docs/speaker-notes.md).
+- [Research ledger: exact definitions, sources, verification/access status and limits](docs/research.md).
+- [Asset credits and licenses](docs/asset-credits.md).
+- [Performed validation and remaining limitations](docs/validation.md).
 
-Original code: [MIT](LICENSE). Third-party fonts and source publications retain their own licenses.
+**Research cutoff: 17 October 2026.** Every slide has a consistent COMSATS/talk footer and a **Sources** button with original links and scope notes. Slide 5 distinguishes adoption, trust and checking. Slide 7 shows dated US software-posting index snapshots and a separate seniority analysis, not jobs created. Slide 8 compares a limited Pakistan platform estimate, one remote employer advert and an all-level US benchmark; no universal remote discount or future salary is claimed. Documentation, company perspectives and studies are labeled separately. Some original Pakistan reports remain inaccessible and their export figures are omitted.
+
+The author’s supplied name and Software Engineer role appear on the opener. No employer or personal work history is invented.
+
+## Author and check
+
+Slides are React components in `src/slides/event/`, ordered once in `src/slides/index.ts`. Displayed statistics live in `src/content/evidence.ts`. The same small presentation shell, themes and optional local localization remain underneath.
+
+```sh
+npm run check
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
+
+The default suite intentionally skips the starter's opt-in localization test. Its English/Urdu configuration was validated separately on main. CI runs lint, format, types, build and Chromium checks. See [CONTRIBUTING.md](CONTRIBUTING.md). The lockfile is committed for reproducible `npm ci` installs.
+
+Deploy the contents of `out/` to a root-domain static host. Repository-subpath deployment needs a matching Next.js base path and public font/image path prefixes; this configuration has not been validated for subpaths. No whole-deck print/PDF feature or private presenter display is included.
+
+Code/design: [MIT](LICENSE). Fonts and cited data retain their separately documented licenses. The closing QR opens the student handout on this branch; use main when starting your own deck.

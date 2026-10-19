@@ -1,6 +1,6 @@
 # Validation record
 
-17 October 2026, Node 24.22.0 / npm 11.19.1. This file records performed checks, not certification of arbitrary author slides.
+17 October 2026, Node 24.22.0 / npm 11.19.1. This file records performed checks, not certification of arbitrary author slides. Records are chronological; the final section is the current result. Earlier content, evidence and layout descriptions may have been superseded.
 
 - Strict TypeScript, ESLint, Prettier and static export passed.
 - Chromium suite covers history/hash recovery, malformed hashes, boundaries, rapid navigation, interactive keyboard handling, theme/state persistence, overview focus/selection/return, reduced motion, fullscreen and no external core requests.
